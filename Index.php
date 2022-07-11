@@ -18,7 +18,7 @@
         <ul class="ul-1">
             <li><a class="a-1" href="Index.php">Principal</a></li>
             <li><a class="a-2" href="MostrarEmpresas.php">Empresas de Lavado</a></li>
-            <li><a class="a-3" href="">Contacto</a></li>
+            <li><a class="a-3" href="Contacto.php">Contacto</a></li>
             <li><a class="a-4" href="">Quienes Somos</a></li>
             <li><a class="a-5" href="Registrar.php">Registrar</a></li>
             <li><a class="a-6" href="Login.php">Iniciar Sesion</a></li>
