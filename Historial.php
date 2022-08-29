@@ -52,7 +52,7 @@ $idEmpresa = $row['idEmpresa'];
                 <select name="search">
                     <?php while ($row = $sql2->fetch_assoc()) {
                     ?>
-                        <option value="<?php echo $row['fecha']; ?>"><?php echo $row['fecha']; ?></option>
+                        <option value="<?php echo $row['fecha']; ?>"><?php echo date('d-m-Y', strtotime($row['fecha'])); ?></option>
                     <?php } ?>
                 </select>
 
@@ -95,7 +95,7 @@ $idEmpresa = $row['idEmpresa'];
                             <td>' . $row['numCLIENTE'] . '</td>
 							<td>' . $row['nombre_servicio'] . '</td>
                             <td>' . date('d-m-Y', strtotime($row['fecha'])) . '</td>
-                            <td>' . $row['hora'] . '</td>	
+                            <td>' . date('H:s', strtotime($row['hora'])) . '</td>	
 						</tr>
 						';
                     }

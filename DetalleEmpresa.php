@@ -99,7 +99,7 @@ include("Funciones/db.php");
                 <option value="0">seleccionar un servicio</option>
                 <?php while ($row = $sql2->fetch_assoc()) {
                 ?>
-                    <option value="<?php echo $row['idSERVICIO']; ?>"><?php echo $row['nombre_servicio']; ?><?php echo ' / ' ?><?php echo '$' ?><?php echo $row['precio_servicio']; ?></option>
+                    <option value="<?php echo $row['idSERVICIO']; ?>"><?php echo $row['nombre_servicio']; ?><?php echo ' - ' ?><?php echo '$' ?><?php echo $row['precio_servicio']; ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -112,7 +112,7 @@ include("Funciones/db.php");
                 <option value="0">seleccionar Hora</option>
                 <?php while ($row = $sql3->fetch_assoc()) {
                 ?>
-                    <option value="<?php echo $row['idHORAS']; ?>"><?php echo $row['fecha']; ?><?php echo ' / ' ?><?php echo $row['hora']; ?></option>
+                    <option value="<?php echo $row['idHORAS']; ?>"><?php echo date("d-m-Y" , strtotime($row['fecha'])); ?><?php echo ' - ' ?><?php echo date('H:s', strtotime($row['hora'])); ?></option>
                 <?php } ?>
             </select>
         </div>

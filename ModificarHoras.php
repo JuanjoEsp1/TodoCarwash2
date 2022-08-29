@@ -55,7 +55,7 @@ $idEmpresa = $row['idEmpresa'];
                         <select name="search">
                             <?php while ($row = $resultado2->fetch_assoc()) {
                             ?>
-                                <option value="<?php echo $row['fecha']; ?>"><?php echo $row['fecha']; ?></option>
+                                <option value="<?php echo $row['fecha']; ?>"><?php echo date("d-m-Y" , strtotime($row['fecha'])); ?></option>
                             <?php } ?>
                         </select>
 
@@ -68,10 +68,10 @@ $idEmpresa = $row['idEmpresa'];
                     <br>           
                     <table class="table table-striped table-hover" aria-describedby="Horas">
                         <tr>
-                            <th>ID</th>
-                            <th>DISPONIBLE</th>
+
                             <th>FECHA</th>
                             <th>HORA</th>
+                            <th>DISPONIBLE</th>
                             <th>ANULAR</th>
                         </tr>
                         <?php
@@ -90,15 +90,15 @@ $idEmpresa = $row['idEmpresa'];
 
                                 echo '
 						<tr>
-                            <td>' . $row['idHORAS'] . '</td>
+
+                            <td>' . date("d-m-Y" , strtotime($row['fecha'])) . '</td>
+							<td>' . date('H:s', strtotime($row['hora'])) . '</td>
                             <td>' . $row['disponible'] . '</td>
-                            <td>' . $row['fecha'] . '</td>
-							<td>' . $row['hora'] . '</td>
                             <td>' ;
 
                             if($row['disponible']=="si")
                                 echo 
-        '<a href="Desactivar.php?id=' . $row['idHORAS'].'" title="Anular" onclick="return confirm(\'Esta seguro que desea anular la hora ' . date('d-m-Y', strtotime($row['fecha'])) . ' a las ' .$row['hora'].'?\')" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>'; 
+        '<a href="Desactivar.php?id=' . $row['idHORAS'].'" title="Anular" onclick="return confirm(\'Esta seguro que desea anular la hora del ' . date('d-m-Y', strtotime($row['fecha'])) . ' a las ' .$row['hora'].'?\')" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>'; 
         
 							'</td>			
 						</tr> 

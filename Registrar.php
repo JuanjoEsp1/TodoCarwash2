@@ -27,12 +27,13 @@
     <h1>Regitro de Empresas</h1>
 
     <form method="post" action="/Funciones/RegistrarFunc.php">
-
+        
+    <br>
         Ingrese Nombre de la Empresa: <br>
         <input type="text" name="nombre_empresa" required><br>
 
         <br> Ingrese Rut de la Empresa: <br>
-        <input type="text" name="rut_empresa" maxlength="10" placeholder="123456780" required><br>
+        <input type="text" id="rut_empresa" name="rut_empresa" required oninput="checkRut(this)" placeholder="Ingrese RUT"> <br>
 
         <br> Ingrese Direccion: <br>
         <input type="text" name="calle" placeholder="Nombre de calle" required><br>
@@ -101,6 +102,7 @@
         <br>
 
         <input type="submit" value="Registrar">
+        <script src="/js/validarRUT.js"></script>
     </form>
 
 
