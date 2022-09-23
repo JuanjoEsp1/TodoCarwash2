@@ -28,6 +28,10 @@
             <li><a class="a-6" href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar Sesion2</a></li>
         </ul>
     </nav>
+
+
+
+
     <img src="IMG/logo2.jpg" alt="logo" />
     <h1>Bienvenido</h1>
 
@@ -46,7 +50,7 @@
 
                 <label for="contrasena"><b>Contraseña</b></label>
                 <input type="password" placeholder="Ingrese Contraseña" name="contrasena" required>
-                
+
                 <button type="submit" value="INGRESAR">Login</button>
             </div>
 
@@ -54,9 +58,12 @@
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
+
+
+
         </form>
     </div>
-<!---  -->
+    <!---  -->
 </body>
 
 <script>
