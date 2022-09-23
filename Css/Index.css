@@ -9,12 +9,12 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(0, 140, 255);
   }
   
   li {
     float: left;
-    border-right:1px solid #bbb;
+    border-right:1px solid rgb(255, 255, 255);
   }
   
   li:last-child {
@@ -30,7 +30,7 @@ ul {
   }
   
   li a:hover:not(.a-1) {
-    background-color: #111;
+    background-color: rgb(10, 27, 105);
   }
   
   .a-1 {
