@@ -1,3 +1,6 @@
+<?php
+include("Navbar.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 

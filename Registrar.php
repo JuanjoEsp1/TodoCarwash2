@@ -1,3 +1,6 @@
+<?php
+include("Navbar.php");
+?>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -15,14 +18,6 @@
 
 
 <body>
-
-    <nav>
-        <ul class="ul-1">
-            <li><a class="a-1" href="Index.php">Principal</a></li>
-            <li><a class="a-2" href="">Contacto</a></li>
-            <li><a class="a-3" href="">Quienes Somos</a></li>
-        </ul>
-    </nav>
 
 
     <div>
