@@ -15,7 +15,7 @@ if (isset($_POST['actualizar'])) {
 
         $results = mysqli_query($conexion, $sql);
         
-        header('Location:/Login.php');
+        header('Location:/Index.php');
         echo "Clave Actualizada Correctamente!";
         exit;
     }
