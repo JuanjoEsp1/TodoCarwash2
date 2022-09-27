@@ -56,7 +56,7 @@ include("Funciones/db.php");
                 </tr>
             </table>
 
-            <a href="MostrarEmpresas.php" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Regresar</a>
+            <a href="MostrarEmpresas2.php" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Regresar</a>
         </article>
     </section>
 

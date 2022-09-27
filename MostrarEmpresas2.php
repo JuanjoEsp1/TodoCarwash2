@@ -73,7 +73,7 @@ include("Login2.php");
                     </div>
 
                     <a href="DetalleEmpresa.php?nik=<?php echo $row['idEmpresa']; ?>">
-                        <button>Visitar</button>
+                        <button class="button-71">Visitar</button>
                     </a>
                 </div>
 

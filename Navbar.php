@@ -12,14 +12,15 @@
 </head>
 
 <body>
+    <div class="logo"><a href="Index.php"><img src="/IMG/logo3.png"></a></div>
     <nav>
         <ul>
             <li><a class="active"  href="Index.php">Principal</a></li>
-            <li><a href="MostrarEmpresas.php">Empresas de Lavado</a></li>
+            <li><a href="MostrarEmpresas2.php">Empresas de Lavado</a></li>
             <li><a href="Contacto.php">Contacto</a></li>
             <li><a href="">Quienes Somos</a></li>
             <li><a href="Registrar.php">Registrar</a></li>
-            <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar Sesion</a></li>
+            <li class="login"><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar Sesion</a></li>
         </ul>
     </nav>
 

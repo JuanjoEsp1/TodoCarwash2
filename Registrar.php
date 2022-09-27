@@ -20,7 +20,7 @@ include("Navbar.php");
 <body>
 
 
-    <div>
+    <div class="Registro">
         <h1>Regitro de Empresas</h1>
         <form method="post" action="/Funciones/RegistrarFunc.php">
 

@@ -1,32 +1,52 @@
+
+.logo img {
+  position: absolute;
+  height: 8%;
+  width: auto;
+  margin-left: 10px;
+  padding-bottom: 5px;
+}
+
+nav {
+ 
+  width: 100%;
+  overflow: auto;
+}
+
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-    border-right:1px solid #bbb;
-  }
-  
-  li:last-child {
-    border-right: none;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
-  
-  .active {
-    background-color: #04AA6D;
-  }
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+  text-align: right;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  width: 100%;
+  display: block;
+  color: rgb(0, 0, 0);
+  padding: 25px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Arial;
+  text-align: center;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(146, 206, 255);
+}
+
+.active {
+  background-color: #0099ff;
+  color: #ffffff;
+
+}
+.login{
+  background-color: rgb(6, 194, 0);
+}
