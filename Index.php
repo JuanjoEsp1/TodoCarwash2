@@ -20,15 +20,7 @@ include("Login2.php");
 </head>
 
 <body>
-  <div class="bg-img">
-    <div class="container">
-      <div class="text-block">
-        <h2> Bienvenido <span>Todocarwash</span> </h2>
-        <a class="boton" href="Contacto.php">Contactar</a>
-      </div>
-    </div>
-
-  </div>
+  
 </body>
 
 </html>
