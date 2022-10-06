@@ -16,11 +16,12 @@ include("Login2.php");
   <link rel="icon" type="image/png" sizes="16x16" href="Image/favicon-16x16.png">
   <link rel="manifest" href="Image/site.webmanifest">
   <link rel="stylesheet" href="Css/Index.css">
-  <title>Index</title>
+  <title>Home</title>
 </head>
 
 <body>
   
+
 </body>
 
 </html>
