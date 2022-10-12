@@ -84,11 +84,27 @@ $idEmpresa = $row['idEmpresa'];
         </form>
         
 
-        <form method="post" action="ver.php">
+        <form method="post" action="SubiRimagen.php">
         <input type="text" name="idEmpresa" value="<?php echo $row['idEmpresa']; ?>" readonly hidden required>
         <button name="submit" class="btn btn-warning">ver Imagen</button>
         </form>
 
+ 	  </div> 
+    </div>
+ </div><br>
+ <?php
+    $sql = mysqli_query($conexion, "SELECT * FROM imagen WHERE Empresa_idEmpresa='$_REQUEST[idEmpresa]'");
+
+    while ($row = mysqli_fetch_assoc($sql)) {
+
+        ?>
+    
+    
+    <img  src="data:imagen/jpg;base64, <?php echo base64_encode($row["imagen"]) ?>" alt="" height="250"
+             data-toggle="modal" 
+             data-target="#exampleModal" />
+  
+        <?php } ?>
 
       </div>
     </div>

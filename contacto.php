@@ -8,44 +8,81 @@ include("Navbar.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
+    <link rel="stylesheet" href="Css/contacto.css">
     <title>Contacto</title>
 </head>
 
 <body>
 
-    <div class="container mt-5 p-5">
-        <h4 class="text-center">
-            Cómo Enviar Correo con PHP desde un Formulario de Contacto Fácil..!
-        </h4>
-        <hr>
-        <form class="mt-5 p-5" action="/EnviarEmail.php" method="POST">
-            <div class="row">
-                <div class="col">
-                    <label for="exampleFormControlInput1">Nombre del Cliente</label>
-                    <input type="text" name="nombreCliente" class="form-control" required>
-                </div>
-                <div class="col">
-                    <label for="exampleFormControlInput1">Email del Cliente</label>
-                    <input type="email" name="emailCliente" class="form-control" required>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Mensaje del Cliente</label>
-                        <textarea class="form-control" name="msjCliente" rows="3" required></textarea>
+    <section id="contact">
+
+        <h1 class="section-header">Contacto</h1>
+
+        <div class="contact-wrapper">
+
+            <!-- Left contact page -->
+
+            <form id="contact-form" class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
                     </div>
                 </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <button type="sutmit" class="btn btn-info">Enviar Formulario de Contacto</button>
-                </div>
-            </div>
-        </form>
-    </div>
 
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+                    </div>
+                </div>
+
+                <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+
+                <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                    <div class="alt-send-button">
+                        <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                    </div>
+
+                </button>
+
+            </form>
+
+            <!-- Left contact page -->
+
+            <div class="direct-contact-container">
+
+                <ul class="contact-list">
+                    <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Santiago</span></i></li>
+
+                    <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
+
+                    <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">todocarwash@gmail.com</a></span></i></li>
+
+                </ul>
+
+                <hr>
+            </div>
+
+        </div>
+
+    </section>
 </body>
+
+<script>
+    document.querySelector('#contact-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        e.target.elements.name.value = '';
+        e.target.elements.email.value = '';
+        e.target.elements.message.value = '';
+    });
+</script>
 
 </html>

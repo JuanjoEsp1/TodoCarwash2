@@ -98,10 +98,11 @@ include("Navbar.php");
             <br>
 
             <input type="submit" value="Registrar">
-            <script src="/js/validarRUT.js"></script>
+            
         </form>
     </div>
 
 </body>
+<script src="/js/validarRUT.js"></script>
 
 </html>
