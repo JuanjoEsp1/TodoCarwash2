@@ -20,8 +20,17 @@ include("Login2.php");
 </head>
 
 <body>
-  
 
+  <div id="slider">
+    <figure>
+      <img src="/IMG/wp001.jpg">
+      <img src="/IMG/wp002.jpg">
+      <img src="/IMG/wp003.jpg">
+      <img src="/IMG/wp004.jpg">
+      <img src="/IMG/wp005.jpg">
+    </figure>
+  </div>
+  <?php include("footer.php"); ?>
 </body>
 
 </html>
