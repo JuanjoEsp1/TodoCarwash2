@@ -1,11 +1,10 @@
 <?php
 include("Navbar.php");
-include("Login2.php");
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">

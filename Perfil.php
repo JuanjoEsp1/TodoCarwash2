@@ -26,26 +26,31 @@ $idEmpresa = $row['idEmpresa'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/Perfil.css" type="text/css" />
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="Css/Perfil.css" type="text/css" />
     <title>Perfil</title>
 </head>
 
 <body>
     <nav>
-        <ul class="ul-1">
-
-            <li><a class="a-2" href="ModificarPerfil.php">Modificar datos del Perfil</a></li>
-            <li><a class="a-5" href="ModificarDescripcion.php">Modificar Descripcion</a></li>
-            <li><a class="a-3" href="ModificarHoras.php">Modificar Horas</a></li>
-            <li><a class="a-4" href="ModificarServicios.php">Modificar Servicios</a></li>
-            <li><a class="a-8" href="SubirImagen.php">Subir Imagenes</a></li>
-            <li><a class="a-6" href="RegistrarHoras.php">Registrar Horas por Fecha</a></li>
-            <li><a class="a-7" href="RegistrarServicios.php">Registrar Servicios</a></li>
-            <li><a class="a-7" href="Historial.php">Historial</a></li>
-            <li><a class="a-1" href="Cerrar_session.php">Cerrar sesion</a></li>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="ModificarPerfil.php">Modificar Perfil</a></li>
+            <li><a href="ModificarDescripcion.php">Modificar Descripcion</a></li>
+            <li><a href="ModificarHoras.php">Modificar Horas</a></li>
+            <li><a href="ModificarServicios.php">Modificar Servicios</a></li>
+            <li><a href="SubirImagen.php">Subir Imagenes</a></li>
+            <li><a href="RegistrarHoras.php">Registrar Horas por Fecha</a></li>
+            <li><a href="RegistrarServicios.php">Registrar Servicios</a></li>
+            <li><a href="Historial.php">Historial</a></li>
+            <li><a href="Cerrar_session.php">Cerrar sesion</a></li>
         </ul>
     </nav>
     <?php

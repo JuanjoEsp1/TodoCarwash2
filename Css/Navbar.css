@@ -76,6 +76,7 @@ a.active,a:hover{
     left: -100%;
     text-align: center;
     transition: all .5s;
+   
   }
   nav ul li{
     display: block;
