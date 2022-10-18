@@ -13,6 +13,7 @@ include("Funciones/db.php");
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script language="JavaScript" src="js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/detalleEmpresa.css" type="text/css" />
     <title>Datos de empresa</title>
 </head>
 
@@ -56,9 +57,12 @@ include("Funciones/db.php");
                 </tr>
             </table>
 
-            <a href="MostrarEmpresas2.php" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Regresar</a>
+            <a href="MostrarEmpresas2.php" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-" aria-hidden="true"></span> Regresar</a>
+            <a href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Agendar</a>
+
         </article>
     </section>
+
 
     <!---------------------------------------------------------------->
 
@@ -69,60 +73,75 @@ include("Funciones/db.php");
     $sql3 = mysqli_query($conexion, "SELECT idHORAS, fecha, hora FROM horas WHERE EMPRESA_idEmpresa='$nik' AND disponible = 'si' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
 
     ?>
+    <div id="id02" class="modal">
 
-    <form method="post" action="Funciones/Agendar.php" class="container">
+        <form class="modal-content animate" action="Funciones/Agendar.php" method="post">
 
-        <input type="text" name="idEmpresa" value="<?php echo $row['idEmpresa']; ?>" readonly hidden required>
-        <br>
-        Ingrese su Nombre: <br>
-        <input type="text" name="nomCLIENTE" required>
-        <br>
 
-        <br>Ingrese su Apellido: <br>
-        <input type="text" name="apellCLIENTE" required><br>
+            <div class="container">
+                <label for="nomCLIENTE"><b>Nombres</b></label>
+                <input type="text" placeholder="Ingrese su nombre" name="nomCLIENTE" required>
 
-        <br> Ingrese su Rut: <br>
-        <input type="text" name="rutCLIENTE" maxlength="10" placeholder="123456780" required><br>
+                <label for="apellCLIENTE"><b>Apellidos</b></label>
+                <input type="text" placeholder="Ingrese su apellido" name="apellCLIENTE" required>
 
-        <br> Ingrese su Direccion: <br>
-        <input type="text" name="dirCLIENTE" placeholder="direccion" required><br>
+                <label for="rutCLIENTE"><b>Rut</b></label>
+                <input type="text" placeholder="Ingrese su Rut" name="rutCLIENTE" required>
 
-        <br> Ingrese su Numero Telefonico:<br>
-        <input type="tel" name="numCLIENTE" placeholder="12345678" maxlength="8" required><br>
+                <label for="dirCLIENTE"><b>direccion</b></label>
+                <input type="text" placeholder="Ingrese su Direccion" name="dirCLIENTE" required>
 
-        <br> Ingrese su correo electronico:<br>
-        <input type="email" name="emailCLIENTE" placeholder="correo@gmail.com" required><br>
-        <br>
-        <div>
-            Seleccion servicio: <br>
-            <select name="cbx_servicios" id="cbx_servicios">
-                <option value="0">seleccionar un servicio</option>
-                <?php while ($row = $sql2->fetch_assoc()) {
-                ?>
-                    <option value="<?php echo $row['idSERVICIO']; ?>"><?php echo $row['nombre_servicio']; ?><?php echo ' - ' ?><?php echo '$' ?><?php echo $row['precio_servicio']; ?></option>
-                <?php } ?>
-            </select>
-        </div>
+                <label for="numCLIENTE"><b>Numero Celular</b></label>
+                <input type="tel" name="numCLIENTE" placeholder="12345678" maxlength="8" required>
 
-        <br>
+                <label for="emailCLIENTE"><b>Correo electronico</b></label>
+                <input type="email" name="emailCLIENTE" placeholder="correo@gmail.com" required>
 
-        <div>
-            Seleccion Hora: <br>
-            <select name="cbx_horas" id="cbx_horas">
-                <option value="0">seleccionar Hora</option>
-                <?php while ($row = $sql3->fetch_assoc()) {
-                ?>
-                    <option value="<?php echo $row['idHORAS']; ?>"><?php echo date("d-m-Y" , strtotime($row['fecha'])); ?><?php echo ' - ' ?><?php echo date('H:s', strtotime($row['hora'])); ?></option>
-                <?php } ?>
-            </select>
-        </div>
-        <div>
+                <div>
+                    Seleccion servicio: <br>
+                    <select name="cbx_servicios" id="cbx_servicios">
+                        <option value="0">seleccionar un servicio</option>
+                        <?php while ($row = $sql2->fetch_assoc()) {
+                        ?>
+                            <option value="<?php echo $row['idSERVICIO']; ?>"><?php echo $row['nombre_servicio']; ?><?php echo ' - ' ?><?php echo '$' ?><?php echo $row['precio_servicio']; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
 
-        </div>
-        <br>
+                <br>
 
-        <input type="submit" value="Agendar">
-    </form>
+                <div>
+                    Seleccion Hora: <br>
+                    <select name="cbx_horas" id="cbx_horas">
+                        <option value="0">seleccionar Hora</option>
+                        <?php while ($row = $sql3->fetch_assoc()) {
+                        ?>
+                            <option value="<?php echo $row['idHORAS']; ?>"><?php echo date("d-m-Y", strtotime($row['fecha'])); ?><?php echo ' - ' ?><?php echo date('H:s', strtotime($row['hora'])); ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+        </form>
+
+    </div>
+
+
 </body>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id02');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </html>
