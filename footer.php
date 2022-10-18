@@ -8,6 +8,7 @@
 
 	<title>Footer</title>
 	<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 	<link rel="stylesheet" href="Css/footer.css">
 </head>
 
@@ -32,7 +33,7 @@
 
 			<div>
 				<i class="fa fa-envelope"></i>
-				<p><a href="mailto:support@company.com">support@company.com</a></p>
+				<p><a href="mailto:contacto@todocarwash.cl">contacto@todocarwash.cl</a></p>
 			</div>
 
 		</div>

@@ -1,7 +1,3 @@
-<?php
-include("Navbar.php");
-
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -19,6 +15,9 @@ include("Navbar.php");
 </head>
 
 <body>
+<?php
+include("Navbar.php");
+?>
 
   <div id="slider">
     <figure>
