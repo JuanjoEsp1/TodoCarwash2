@@ -86,9 +86,9 @@ include("Funciones/db.php");
                 <input type="text" placeholder="Ingrese su apellido" name="apellCLIENTE" required>
 
                 <label for="rutCLIENTE"><b>Rut</b></label>
-                <input type="text" placeholder="Ingrese su Rut" name="rutCLIENTE" required>
+                <input type="text" placeholder="Ingrese su Rut" name="rutCLIENTE" oninput="checkRut(this)" required>
 
-                <label for="dirCLIENTE"><b>direccion</b></label>
+                <label for="dirCLIENTE"><b>Direccion</b></label>
                 <input type="text" placeholder="Ingrese su Direccion" name="dirCLIENTE" required>
 
                 <label for="numCLIENTE"><b>Numero Celular</b></label>
@@ -120,11 +120,11 @@ include("Funciones/db.php");
                         <?php } ?>
                     </select>
                 </div>
-                <br>
-                <div>
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                    </div>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                            <button type="submit" value="agendar" class="agendarbtn">Agendar</button>
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
         </form>
 
     </div>
@@ -143,5 +143,6 @@ include("Funciones/db.php");
         }
     }
 </script>
+<script src="/js/validarRUT.js"></script>
 
 </html>
