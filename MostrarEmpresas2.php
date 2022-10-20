@@ -22,10 +22,9 @@ include("Login2.php");
 
     ?>
     <h2>Lista de Empresas</h2>
-    <hr />
 
-    <form name="Buscarcomuna" action="MostrarEmpresas2.php" method="POST">
-        Comunas:
+    <form name="Buscarcomuna" action="MostrarEmpresas2.php" method="POST" class="formB">
+        <label>Comuna</label>
         <select name="search">
             <?php while ($row = $sql2->fetch_assoc()) {
             ?>
@@ -33,7 +32,7 @@ include("Login2.php");
             <?php } ?>
         </select>
 
-        <input type="submit" name="buscar" value="Buscar Comuna">
+        <input type="submit" name="buscar" value="Buscar">
         <input type=submit value="Reset" name="btnReset">
     </form><br>
 
@@ -67,13 +66,13 @@ include("Login2.php");
                         <img src="IMG/logo2.jpg" alt="">
                     </div>
                     <div class="caption">
-                        <p class="product_name"><?php echo $row["nombre_empresa"]; ?></p>
-                        <p class="price"><?php echo $row["calle"], " ", $row["numeracion"]; ?></p>
-                        <p class="discount"><?php echo $row["comuna"]; ?></p>
+                        <p class="nombre_empresa"><?php echo $row["nombre_empresa"]; ?></p>
+                        <p class="Direccion"><?php echo $row["calle"], " ", $row["numeracion"]; ?></p>
+                        <p class="comuna"><?php echo $row["comuna"]; ?></p>
                     </div>
 
                     <a href="DetalleEmpresa.php?nik=<?php echo $row['idEmpresa']; ?>">
-                        <button class="button-71">Visitar</button>
+                        <button class="button-18">Visitar</button>
                     </a>
                 </div>
 

@@ -38,7 +38,7 @@ nav ul li a{
   border-radius: 3px;
   text-transform: uppercase;
 }
-a.active,a:hover{
+.active,.active:hover{
   background: #1b9bff;
   transition: .5s;
 }
