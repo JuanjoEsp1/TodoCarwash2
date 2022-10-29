@@ -88,6 +88,12 @@ $diferenciaDias = $FechaFin3 - $FechaIn3;
 
     <?php
 
+   /* $consultaInicio = mysqli_query($conexion,"SELECT fecha FROM horas WHERE EMPRESA_idEmpresa='$idEmpresa'");
+
+    if ($consultaInicio='$FechaIn'){
+        echo "<br>La fecha ya ha sido ingresada";
+    }*/
+    
     for ($y = $fecha1; $y <= $fecha2; $y += 86400) {
 
         /**
@@ -121,6 +127,7 @@ $diferenciaDias = $FechaFin3 - $FechaIn3;
     }
     echo "<br>Las horas se ingresaron exitosamente";
     header('location: Perfil.php');
+    
 
 
 

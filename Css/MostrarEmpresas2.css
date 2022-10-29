@@ -66,6 +66,7 @@ main .card {
     margin: 20px;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 5px 5px 5px;
 }
 
 main .card .image {

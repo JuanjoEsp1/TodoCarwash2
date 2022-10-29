@@ -1,7 +1,7 @@
 <?php
 include("Funciones/db.php");
 
-$correo= $_POST['correo_empresa'];
+$correo = $_POST['correo_empresa'];
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,8 @@ $correo= $_POST['correo_empresa'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="Css/resetPsw2.css" type="text/css" />
+    <title>Recuperar</title>
 </head>
 
 <body>
@@ -27,15 +28,18 @@ $correo= $_POST['correo_empresa'];
             if (mysqli_num_rows($gotResuslts) > 0) {
                 while ($row = mysqli_fetch_array($gotResuslts)) {
         ?>
-                    <div class="form-group">
+                    <div class="container">
+                        <div class="form-group">
                         </div>
                         <input type="email" name="correo_empresa" class="form-control" value="<?php echo $correo ?>" readonly>
-                    <div class="form-group">
-                        <input type="password" name="contrasenaEmpresa" class="form-control" value="">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <input type="submit" name="actualizar" class="btn btn-info" value="Actualizar Contrasena">
+                        <div class="form-group">
+                            <span>Contrasena Nueva</span>
+                            <input type="password" name="contrasenaEmpresa" class="form-control" value="" placeholder="Ingrese Contrasena" required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" name="actualizar" class="btn btn-info" value="Actualizar Contrasena">
+                        </div>
                     </div>
         <?php
                 }

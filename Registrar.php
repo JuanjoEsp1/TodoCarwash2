@@ -41,6 +41,7 @@ include("Navbar.php");
                         <span class="details">Numeracion</span>
                         <input type="number" name="numeracion" maxlength="9" placeholder="1234" required>
                     </div>
+                    
                     <div class="input-box">
                         <span class="details">Comuna</span>
                         <select name="comuna">
@@ -91,15 +92,16 @@ include("Navbar.php");
                     <div class="input-box">
                         <span class="details">Numero Celular</span>
                         <input class="code" type="text" placeholder="+56" readonly>
-                        <input type="tel" name="telefono_empresa" placeholder="912345678" maxlength="8" required>
+                        <input class="tel" type="tel" name="telefono_empresa" placeholder="912345678" maxlength="9" required>
                     </div>
+                    
                     <div class="input-box">
                         <span class="details">Correo electronico</span>
                         <input type="email" name="correo_empresa" placeholder="Ingrese su correo" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Contraseña</span>
-                        <input type="text" name="contrasena" placeholder="Ingrese su contraseña" required>
+                        <input type="password" name="contrasena" placeholder="Ingrese su contraseña" required>
                     </div>
                 </div>
         </div>

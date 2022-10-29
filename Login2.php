@@ -25,12 +25,12 @@
                 <label for="contrasena"><b>Contraseña</b></label>
                 <input type="password" placeholder="Ingrese Contraseña" name="contrasena" required>
 
-                <button type="submit" value="INGRESAR">Login</button>
+                <button class="loginbtn" type="submit" value="INGRESAR">Iniciar Sesion</button>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="Resetpsw.php">password?</a></span>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+                <span class="psw">ha olvidado la <a href="Resetpsw.php">contrasena?</a></span>
             </div>
 
 

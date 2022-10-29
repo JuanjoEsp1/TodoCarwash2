@@ -67,6 +67,12 @@ select {
     border-bottom-width: 2px;
     transition: all 0.3s ease;
 }
+.user-details .input-box .code{
+    width: 23%;
+}
+.user-details .input-box .tel{
+    width: 75%;
+}
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
@@ -118,9 +124,14 @@ form .category label {
 @media(max-width: 584px) {
     .container {
         max-width: 100%;
+        margin: auto;
     }
 
     form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .user-details .select-box {
         margin-bottom: 15px;
         width: 100%;
     }
