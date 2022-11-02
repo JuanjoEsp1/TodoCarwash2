@@ -30,7 +30,6 @@
 				<i class="fa fa-phone"></i>
 				<p>+56 912345678</p>
 			</div>
-
 			<div>
 				<i class="fa fa-envelope"></i>
 				<p><a href="mailto:contacto@todocarwash.cl">contacto@todocarwash.cl</a></p>
