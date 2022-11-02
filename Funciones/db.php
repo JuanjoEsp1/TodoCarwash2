@@ -5,7 +5,6 @@ $userName = "root";
 $password = "Juanjo3474-34";
 $database = "todocarwash2";
 
-
 $conexion=mysqli_connect($serverName,$userName,$password,$database);
 
 if (!$conexion) {
