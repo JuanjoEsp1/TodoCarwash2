@@ -75,6 +75,21 @@ include("Login2.php");
                         <button class="button-18">Visitar</button>
                     </a>
                 </div>
+                
+                <header>
+                    <div class="burbujas">
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                    </div>
+                </header>
 
         <?php
 

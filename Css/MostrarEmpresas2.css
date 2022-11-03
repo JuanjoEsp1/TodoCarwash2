@@ -1,143 +1,270 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    color: black;
-    
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: black;
+
 }
-h2{
-    text-align: center;
-    font-size: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+body{
+    height: 100vh;
+    background: linear-gradient(135deg, #0082e6, #1d2a5a);
 }
-label{
-    font-size: 20px;
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+label {
+  font-size: 20px;
 }
 
-.formB{
-   text-align: center;
+.formB {
+  text-align: center;
 }
 
-
-input[type=search],
+input[type="search"],
 select {
-    width: auto;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
-input[type=submit] {
-    width: auto;
-    background-color: #5a93fc;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+input[type="submit"] {
+  width: auto;
+  background-color: #5a93fc;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #1d2a5a;
+input[type="submit"]:hover {
+  background-color: #1d2a5a;
 }
 
 main {
-    font-size: 70%;
-    max-width: 1500px;
-    width: 95%;
-    margin: 30px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: auto;
+  font-size: 70%;
+  max-width: 1500px;
+  width: 95%;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
 }
 
 main .card {
-    max-width: 300px;
-    flex: 1 1 210px;
-    text-align: center;
-    height: 400px;
-    border: 2px solid rgb(0, 0, 0);
-    margin: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 5px 5px 5px;
+  max-width: 300px;
+  flex: 1 1 210px;
+  text-align: center;
+  height: 400px;
+  border: 2px solid rgb(0, 0, 0);
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px;
+  background-color: white;
 }
 
 main .card .image {
-    height: 50%;
-    margin-bottom: 20px;
+  height: 50%;
+  margin-bottom: 20px;
 }
 
 main .card .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 main .card .caption {
-    padding-left: 1em;
-    text-align: left;
-    line-height: 3em;
-    height: 25%;
+  padding-left: 1em;
+  text-align: left;
+  line-height: 3em;
+  height: 25%;
 }
 
 main .card .caption p {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
-main .card a{
-    width: 50%;
+main .card a {
+  width: 50%;
 }
 
-.button-18{
-    height: 45px;
-    margin: 25px 0
+.button-18 {
+  height: 45px;
+  margin: 25px 0;
 }
 
-.button-18{
-    height: auto;
-    width: 90%;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, #0082e6, #1d2a5a);
+.button-18 {
+  height: auto;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #0082e6, #1d2a5a);
 }
 
 .button-18:hover {
-    /* transform: scale(0.99); */
-    background: linear-gradient(-135deg, #0082e6, #1d2a5a);
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #0082e6, #1d2a5a);
 }
-  
-  @media (max-width: 768px) {
 
-    main .card .image {
-        height: 52%;
-        margin-bottom: 5px;
-    }
-
-    input[type=submit]{
-        width: auto;
-        height: auto;
-        font-size: 15px;
-    }
-    input[type=search], select{
-        width: auto;
-        height: auto;
-        font-size: 15px;
-    }
-    label{
-        font-size: 18px;
-    }
-    
+@media (max-width: 768px) {
+  main .card .image {
+    height: 52%;
+    margin-bottom: 5px;
   }
+
+  input[type="submit"] {
+    width: auto;
+    height: auto;
+    font-size: 15px;
+  }
+  input[type="search"],
+  select {
+    width: auto;
+    height: auto;
+    font-size: 15px;
+  }
+  label {
+    font-size: 18px;
+  }
+}
+
+
+/* burbujas */
+
+.burbuja{
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+
+    position: absolute;
+    bottom: -150;
+    
+    animation: burbujas 3s linear infinite ;
+}
+
+.burbuja:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(2){
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(3){
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+}
+
+.burbuja:nth-child(4){
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(5){
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.burbuja:nth-child(6){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(7){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(8){
+    width: 100;
+    height: 100px;
+    left: 52%;
+    animation-duration: 5s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(9){
+    width: 65px;
+    height: 65px;
+    left: 51%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.burbuja:nth-child(10){
+    width: 40px;
+    height: 40px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+
+@keyframes burbujas{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes movimiento{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
