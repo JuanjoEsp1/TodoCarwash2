@@ -19,26 +19,52 @@ include("Funciones/db.php");
     <h2>Datos de la empresa &raquo; Perfil</h2>
     <hr />
 
+
     <?php
     $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
 
     $sql = mysqli_query($conexion, "SELECT * FROM empresa WHERE idEmpresa='$nik'");
+
+
+
+
+
     if (mysqli_num_rows($sql) == 0) {
         header("Location: MostrarEmpresas.php");
     } else {
         $row = mysqli_fetch_assoc($sql);
     }
+
+
     ?>
-    <div class="card">
-        <div class="image">
-            <img src="IMG/logo2.jpg" alt="">
+
+    <?php
+    $query = "SELECT * FROM images WHERE EMPRESA_idEmpresa ='$nik' ORDER BY id_imagen ASC";
+    $run = $conexion->query($query);
+    while ($row = mysqli_fetch_array($run)) {
+        $image = $row['image'];
+
+    ?>
+
+        <div class="mySlides fade">
+            <div class="logo_slider">
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <img src="./uploads/<?php echo $image ?>">
+
+                
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+
+            <div class="text">Caption Text</div>
+
         </div>
-        <div class="caption">
-            <p class="nombre_empresa"><?php echo $row["nombre_empresa"]; ?></p>
-            <p class="Direccion"><?php echo $row["calle"], " ", $row["numeracion"]; ?></p>
-            <p class="comuna"><?php echo $row["comuna"]; ?></p>
-        </div>
-    </div>
+
+
+    <?php } ?>
+
+
+
+
 
     <table class="table table-striped table-condensed" aria-describedby="detalleEmpresas">
         <tr>
@@ -62,6 +88,7 @@ include("Funciones/db.php");
             <td><?php echo $row['descripcion']; ?></td>
         </tr>
     </table>
+
 
     <a href="MostrarEmpresas2.php" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-" aria-hidden="true"></span> Regresar</a>
     <a href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Agendar</a>
@@ -151,5 +178,37 @@ include("Funciones/db.php");
     }
 </script>
 <script src="/js/validarRUT.js"></script>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
 
 </html>

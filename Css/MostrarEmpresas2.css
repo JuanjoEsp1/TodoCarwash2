@@ -143,6 +143,12 @@ main .card a {
   label {
     font-size: 18px;
   }
+  body{
+    height: auto;
+  }
+  .burbuja{
+    display: none;
+  }
 }
 
 
