@@ -7,7 +7,7 @@
 
 }
 body{
-    height: 100vh;
+    
     background: linear-gradient(135deg, #0082e6, #1d2a5a);
 }
 h2 {
@@ -51,7 +51,7 @@ input[type="submit"]:hover {
 
 main {
   font-size: 70%;
-  max-width: 1500px;
+  /* max-width: 1500px; */
   width: 95%;
   margin: 30px auto;
   display: flex;
@@ -61,7 +61,7 @@ main {
 }
 
 main .card {
-  max-width: 300px;
+  max-width: 250px;
   flex: 1 1 210px;
   text-align: center;
   height: 400px;

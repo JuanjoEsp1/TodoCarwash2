@@ -10,6 +10,7 @@ include("Funciones/db.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="Css/detalleEmpresa.css" type="text/css" />
     <title>Datos de empresa</title>
 </head>
@@ -38,33 +39,7 @@ include("Funciones/db.php");
 
     ?>
 
-    <?php
-    $query = "SELECT * FROM images WHERE EMPRESA_idEmpresa ='$nik' ORDER BY id_imagen ASC";
-    $run = $conexion->query($query);
-    while ($row = mysqli_fetch_array($run)) {
-        $image = $row['image'];
-
-    ?>
-
-        <div class="mySlides fade">
-            <div class="logo_slider">
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <img src="./uploads/<?php echo $image ?>">
-
-                
-                <a class="next" onclick="plusSlides(1)">❯</a>
-            </div>
-
-            <div class="text">Caption Text</div>
-
-        </div>
-
-
-    <?php } ?>
-
-
-
-
+    <section>
 
     <table class="table table-striped table-condensed" aria-describedby="detalleEmpresas">
         <tr>
@@ -89,79 +64,112 @@ include("Funciones/db.php");
         </tr>
     </table>
 
-
     <a href="MostrarEmpresas2.php" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-" aria-hidden="true"></span> Regresar</a>
     <a href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Agendar</a>
 
-    <!---------------------------------------------------------------->
+    <div class="slideshow-container">
+        <?php
+        $query = "SELECT * FROM images WHERE EMPRESA_idEmpresa ='$nik' ORDER BY id_imagen ASC";
+        $run = $conexion->query($query);
+        while ($row2 = mysqli_fetch_array($run)) {
+            $image = $row2['image'];
 
-    <?php
+        ?>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="logo_slider">
 
-    $sql2 = mysqli_query($conexion, "SELECT idSERVICIO, nombre_servicio,precio_servicio FROM servicio WHERE EMPRESA_idEmpresa='$nik'");
+                        <img src="./uploads/<?php echo $image ?>">
 
-    $sql3 = mysqli_query($conexion, "SELECT idHORAS, fecha, hora FROM horas WHERE EMPRESA_idEmpresa='$nik' AND disponible = 'si' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
+                    </div>
 
-    ?>
-
-    <div id="id02" class="container">
-        <div class="title">Agendar</div>
-        <div class="content">
-            <form class="modal-content animate" action="Funciones/Agendar.php" method="post">
-
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details" for="nomCLIENTE">Nombres</span>
-                        <input type="text" placeholder="Ingrese su nombre" name="nomCLIENTE" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details" for="apellCLIENTE">Apellidos</span>
-                        <input type="text" placeholder="Ingrese su apellido" name="apellCLIENTE" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details" for="rutCLIENTE">Rut</span>
-                        <input type="text" placeholder="Ingrese su Rut" name="rutCLIENTE" oninput="checkRut(this)" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details" for="dirCLIENTE">Direccion</span>
-                        <input type="text" placeholder="Ingrese su Direccion" name="dirCLIENTE" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details" for="numCLIENTE">Numero Celular</span>
-                        <input class="code" type="text" placeholder="+56" readonly>
-                        <input type="tel" class="tel" name="numCLIENTE" placeholder="12345678" maxlength="8" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details" for="emailCLIENTE">Correo electronico</span>
-                        <input type="email" name="emailCLIENTE" placeholder="correo@gmail.com" required>
-                    </div>
-                    <div class="select-box">
-                        <span class="details">servicio:</span>
-                        <select name="cbx_servicios" id="cbx_servicios">
-                            <option value="0">seleccionar un servicio</option>
-                            <?php while ($row = $sql2->fetch_assoc()) {
-                            ?>
-                                <option value="<?php echo $row['idSERVICIO']; ?>"><?php echo $row['nombre_servicio']; ?><?php echo ' - ' ?><?php echo '$' ?><?php echo $row['precio_servicio']; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                    <div class="select-box">
-                        <span class="details">Seleccion Hora:</span>
-                        <select name="cbx_horas" id="cbx_horas">
-                            <option value="0">seleccionar Hora</option>
-                            <?php while ($row = $sql3->fetch_assoc()) {
-                            ?>
-                                <option value="<?php echo $row['idHORAS']; ?>"><?php echo date("d-m-Y", strtotime($row['fecha'])); ?><?php echo ' - ' ?><?php echo date('H:s', strtotime($row['hora'])); ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
                 </div>
-                <div class="container2" style="background-color:#f1f1f1">
-                    <button type="submit" value="agendar" class="agendarbtn">Agendar</button>
-                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                </div>
-            </form>
-        </div>
+
+            </div>
     </div>
+
+<?php } ?>
+
+
+    </section>
+
+
+
+
+
+
+
+<!---------------------------------------------------------------->
+
+<?php
+
+$sql2 = mysqli_query($conexion, "SELECT idSERVICIO, nombre_servicio,precio_servicio FROM servicio WHERE EMPRESA_idEmpresa='$nik'");
+
+$sql3 = mysqli_query($conexion, "SELECT idHORAS, fecha, hora FROM horas WHERE EMPRESA_idEmpresa='$nik' AND disponible = 'si' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
+
+?>
+
+<div id="id02" class="container">
+    <div class="title">Agendar</div>
+    <div class="content">
+        <form class="modal-content animate" action="Funciones/Agendar.php" method="post">
+
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details" for="nomCLIENTE">Nombres</span>
+                    <input type="text" placeholder="Ingrese su nombre" name="nomCLIENTE" required>
+                </div>
+                <div class="input-box">
+                    <span class="details" for="apellCLIENTE">Apellidos</span>
+                    <input type="text" placeholder="Ingrese su apellido" name="apellCLIENTE" required>
+                </div>
+                <div class="input-box">
+                    <span class="details" for="rutCLIENTE">Rut</span>
+                    <input type="text" placeholder="Ingrese su Rut" name="rutCLIENTE" oninput="checkRut(this)" required>
+                </div>
+                <div class="input-box">
+                    <span class="details" for="dirCLIENTE">Direccion</span>
+                    <input type="text" placeholder="Ingrese su Direccion" name="dirCLIENTE" required>
+                </div>
+                <div class="input-box">
+                    <span class="details" for="numCLIENTE">Numero Celular</span>
+                    <input class="code" type="text" placeholder="+56" readonly>
+                    <input type="tel" class="tel" name="numCLIENTE" placeholder="12345678" maxlength="8" required>
+                </div>
+                <div class="input-box">
+                    <span class="details" for="emailCLIENTE">Correo electronico</span>
+                    <input type="email" name="emailCLIENTE" placeholder="correo@gmail.com" required>
+                </div>
+                <div class="select-box">
+                    <span class="details">servicio:</span>
+                    <select name="cbx_servicios" id="cbx_servicios">
+                        <option value="0">seleccionar un servicio</option>
+                        <?php while ($row = $sql2->fetch_assoc()) {
+                        ?>
+                            <option value="<?php echo $row['idSERVICIO']; ?>"><?php echo $row['nombre_servicio']; ?><?php echo ' - ' ?><?php echo '$' ?><?php echo $row['precio_servicio']; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="select-box">
+                    <span class="details">Seleccion Hora:</span>
+                    <select name="cbx_horas" id="cbx_horas">
+                        <option value="0">seleccionar Hora</option>
+                        <?php while ($row = $sql3->fetch_assoc()) {
+                        ?>
+                            <option value="<?php echo $row['idHORAS']; ?>"><?php echo date("d-m-Y", strtotime($row['fecha'])); ?><?php echo ' - ' ?><?php echo date('H:s', strtotime($row['hora'])); ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+            </div>
+            <div class="container2" style="background-color:#f1f1f1">
+                <button type="submit" value="agendar" class="agendarbtn">Agendar</button>
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 </body>
