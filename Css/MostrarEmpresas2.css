@@ -161,7 +161,7 @@ main .card a {
 
     position: absolute;
     bottom: -150;
-    
+    z-index: 0;
     animation: burbujas 3s linear infinite ;
 }
 
