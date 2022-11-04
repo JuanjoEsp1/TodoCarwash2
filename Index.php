@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="Css/Index.css">
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Home</title>
 </head>
 
@@ -32,25 +32,7 @@
     </figure>
   </div>
 
-  <!-- # about
-        ================================================== 
-  <section id="about" class="s-about">
 
-    <div class="row section-header">
-      <div class="column lg-12 ss-animate ss-fade-up">
-        <h1 class="text-display-title">
-          About Us.
-        </h1>
-        <p class="lead">
-          Sed ut perspiciatis unde omnis iste natus error sit
-          voluptatem accusanti doloremque laudantium, totam rem
-          aperiam, eaque ipsa quae ab illo inventore veritatis et
-          quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam.
-        </p>
-      </div>
-    </div> <!-- end section-header
-
-  </section> -->
 
   <!-- The Band Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
