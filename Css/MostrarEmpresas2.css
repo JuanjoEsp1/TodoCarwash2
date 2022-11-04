@@ -69,7 +69,7 @@ main .card {
   margin: 20px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 5px 5px 5px;
+  box-shadow: 4px 4px 10px 0px;
   background-color: white;
 }
 
