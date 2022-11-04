@@ -68,7 +68,7 @@ include("Funciones/db.php");
 
     <article class="detail-content">
         <div class="detail">
-            <p class="nombre_empresa"><label>Nombre: </label> <?php echo $row["nombre_empresa"]; ?></p>
+            <h1 class="nombre_empresa"><?php echo $row["nombre_empresa"]; ?></h1>
             <p class="Direccion"><label>Direccion: </label><?php echo $row["calle"], " ", $row["numeracion"]; ?></p>
             <p class="comuna"><label>Comuna: </label><?php echo $row["comuna"]; ?></p>
             <p class="telefono"><label>Telefono: </label><?php echo $row["telefono_empresa"]; ?></p>

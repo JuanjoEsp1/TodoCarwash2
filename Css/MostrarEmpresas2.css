@@ -105,7 +105,6 @@ main .card a {
 }
 
 .button-18 {
-  height: auto;
   width: 90%;
   border-radius: 5px;
   border: none;
@@ -161,7 +160,7 @@ main .card a {
 
     position: absolute;
     bottom: -150;
-    z-index: 0;
+    z-index: -1;
     animation: burbujas 3s linear infinite ;
 }
 
@@ -171,6 +170,7 @@ main .card a {
     left: 5%;
     animation-duration: 3s;
     animation-delay: 3s;
+    
 }
 
 .burbuja:nth-child(2){
@@ -185,8 +185,9 @@ main .card a {
     width: 20px;
     height: 20px;
     left: 15%;
-    animation-duration: 1.5s;
+    animation-duration: 3s;
     animation-delay: 7s;
+    z-index: 1;
 }
 
 .burbuja:nth-child(4){
@@ -211,6 +212,7 @@ main .card a {
     left: 50%;
     animation-duration: 4s;
     animation-delay: 5s;
+    z-index: 1;
 }
 
 .burbuja:nth-child(7){
@@ -219,6 +221,7 @@ main .card a {
     left: 50%;
     animation-duration: 4s;
     animation-delay: 5s;
+    z-index: 1;
 }
 
 .burbuja:nth-child(8){
