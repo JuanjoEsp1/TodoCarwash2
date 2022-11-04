@@ -57,6 +57,44 @@
     </div>
   </div>
 
+  <section class="wrapper style1 container special">
+    <div class="row">
+      <div class="col-4 col-12-narrower">
+
+        <section>
+          <span class="icon solid featured fa-check"></span>
+          <header>
+            <h3>Vision</h3>
+          </header>
+          <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+        </section>
+
+      </div>
+      <div class="col-4 col-12-narrower">
+
+        <section>
+          <span class="icon solid featured fa-check"></span>
+          <header>
+            <h3>Objetivo</h3>
+          </header>
+          <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+        </section>
+
+      </div>
+      <div class="col-4 col-12-narrower">
+
+        <section>
+          <span class="icon solid featured fa-check"></span>
+          <header>
+            <h3>Probably Something</h3>
+          </header>
+          <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
   <?php include("footer.php"); ?>
 </body>
 
