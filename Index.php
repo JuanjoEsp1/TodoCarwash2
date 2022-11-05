@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="Image/favicon-16x16.png">
   <link rel="manifest" href="Image/site.webmanifest">
   <link rel="stylesheet" href="Css/Index.css">
-
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,6 +41,8 @@
     <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
       ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
       adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <p>Guillermo</p>
@@ -55,40 +57,43 @@
         <img src="/IMG/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
       </div>
     </div>
+
+
   </div>
 
   <section class="wrapper style1 container special">
     <div class="row">
       <div class="col-4 col-12-narrower">
 
-        <section>
-          <span class="icon solid featured fa-check"></span>
+        <section class="section-block">
+          <iconify-icon icon="mdi:bullseye-arrow" class="icono"></iconify-icon>
+
+          <header>
+            <h3>Mision</h3>
+          </header>
+          <p class="p-def">Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+        </section>
+
+      </div>
+      <div class="col-4 col-12-narrower">
+
+        <section class="section-block">
+          <iconify-icon icon="emojione:eye" class="icono"></iconify-icon>
           <header>
             <h3>Vision</h3>
           </header>
-          <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+          <p class="p-def">Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
         </section>
 
       </div>
       <div class="col-4 col-12-narrower">
 
-        <section>
-          <span class="icon solid featured fa-check"></span>
+        <section class="section-block">
+          <iconify-icon icon="bi:gem" class="icono"></iconify-icon>
           <header>
-            <h3>Objetivo</h3>
+            <h3>Valores</h3>
           </header>
-          <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-        </section>
-
-      </div>
-      <div class="col-4 col-12-narrower">
-
-        <section>
-          <span class="icon solid featured fa-check"></span>
-          <header>
-            <h3>Probably Something</h3>
-          </header>
-          <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+          <p class="p-def">Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
         </section>
 
       </div>
