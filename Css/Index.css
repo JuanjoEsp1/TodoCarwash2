@@ -7,6 +7,7 @@
   margin: 0;
   left: 0;
   animation: 20s slider infinite;
+  -webkit-animation: 20s slider infinite;
 }
 #slider figure img {
   width: 20%;
@@ -31,20 +32,23 @@
   25% {
     left: -100%;
   }
-  45% {
+  40% {
     left: -100%;
   }
-  50% {
+  45% {
+    left: -200%;
+  }
+  65% {
     left: -200%;
   }
   70% {
-    left: -200%;
+    left: -300%;
   }
-  75% {
+  90% {
     left: -300%;
   }
   95% {
-    left: -300%;
+    left: -400%;
   }
   100% {
     left: -400%;
