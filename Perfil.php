@@ -18,6 +18,9 @@ $resultado = $conexion->query($sql);
 $row = $resultado->fetch_assoc();
 
 $idEmpresa = $row['idEmpresa'];
+
+date_default_timezone_set("America/Santiago");
+$fecha2=date("Y-m-d");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -59,11 +62,23 @@ $idEmpresa = $row['idEmpresa'];
     INNER JOIN agendamiento ON agendamiento.HORAS_idHORAS = horas.idHORAS
     WHERE agendamiento.EMPRESA_idEmpresa = '$idEmpresa' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha");
 
+    $fecha1 = mysqli_query($conexion,"SELECT fecha FROM empresa WHERE idEmpresa = '$idEmpresa'");
+    $resfecha = $fecha1->fetch_assoc();
+    $sumfecha = date('Y-m-d',strtotime($resfecha['fecha']."+ 7 days"));
+
+    if($sumfecha <= $fecha2){
+        echo "<div class='alert alert-success'>Pagar suscripcion</div>";
+    }
     ?>
+    <h1><?php echo $resfecha['fecha'];?></h1>
+    <h1><?php echo $sumfecha;?></h1>
+
+
     <div class="pago">
         <button type="button" class="btnpago" onclick="location.href='https://www.flow.cl/btn.php?token=i90ype2'">Suscripcion</button>
     </div>
     <div class="container">
+        
 
         <h1>Bienvenido: <?php echo utf8_encode($row['nombre_empresa']); ?></h1>
 
