@@ -70,8 +70,8 @@ $fecha2=date("Y-m-d");
         echo "<div class='alert alert-success'>Pagar suscripcion</div>";
     }
     ?>
-    <h1><?php echo $resfecha['fecha'];?></h1>
-    <h1><?php echo $sumfecha;?></h1>
+    <!--<h1><?php //echo $resfecha['fecha'];?></h1>
+    <h1><?php //echo $sumfecha;?></h1> -->
 
 
     <div class="pago">
