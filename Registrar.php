@@ -35,13 +35,9 @@ include("Navbar.php");
                     </div>
                     <div class="input-box">
                         <span class="details">Direccion</span>
-                        <input type="text" name="calle" placeholder="ingrese calle" required>
+                        <input id="direccion" name="direccion" type="text" placeholder="Ingrese Direccion" />
                     </div>
-                    <div class="input-box">
-                        <span class="details">Numeracion</span>
-                        <input type="number" name="numeracion" maxlength="9" placeholder="1234" required>
-                    </div>
-                    
+
                     <div class="input-box">
                         <span class="details">Comuna</span>
                         <select name="comuna">
@@ -94,7 +90,7 @@ include("Navbar.php");
                         <input class="code" type="text" placeholder="+56" readonly>
                         <input class="tel" type="tel" name="telefono_empresa" placeholder="912345678" maxlength="9" required>
                     </div>
-                    
+
                     <div class="input-box">
                         <span class="details">Correo electronico</span>
                         <input type="email" name="correo_empresa" placeholder="Ingrese su correo" required>
@@ -103,6 +99,8 @@ include("Navbar.php");
                         <span class="details">Contraseña</span>
                         <input type="password" name="contrasena" placeholder="Ingrese su contraseña" required>
                     </div>
+                    <input type="text" name="latitude" id="latitude" hidden style="display: none;"/>
+                    <input type="text" name="longitude" id="longitude" hidden style="display: none;"/>
                 </div>
         </div>
         <div class="button">
@@ -114,5 +112,29 @@ include("Navbar.php");
 
 </body>
 <script src="/js/validarRUT.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCOQLs9I66NNweqKrNCiYxizbwfCcOrQxI&libraries=places"></script>
+ 
+<script>
+
+var direccion = 'direccion';
+google.maps.event.addDomListener(window, 'load', initialize);
+function initialize() {
+
+var autocomplete;
+autocomplete = new google.maps.places.Autocomplete((document.getElementById(direccion)), {
+    componentRestrictions: {
+        country: "CL"
+    }
+});
+autocomplete.addListener('place_changed', function () {
+var place = autocomplete.getPlace();
+// place variable will have all the information you are looking for.
+ 
+  document.getElementById("latitude").value = place.geometry['location'].lat();
+  document.getElementById("longitude").value = place.geometry['location'].lng();
+
+});
+}
+</script>
 
 </html>
