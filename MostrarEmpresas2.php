@@ -67,8 +67,7 @@ include("Login2.php");
                     </div>
                     <div class="caption">
                         <p class="nombre_empresa"><?php echo $row["nombre_empresa"]; ?></p>
-                        <p class="Direccion"><?php echo $row["calle"], " ", $row["numeracion"]; ?></p>
-                        <p class="comuna"><?php echo $row["comuna"]; ?></p>
+                        <p class="Direccion"><?php echo $row["direccion"]; ?></p>
                     </div>
 
                     <a href="DetalleEmpresa.php?nik=<?php echo $row['idEmpresa']; ?>">

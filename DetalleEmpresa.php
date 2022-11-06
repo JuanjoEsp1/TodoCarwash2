@@ -55,7 +55,6 @@ include("Funciones/db.php");
                                 <img src="./uploads/<?php echo $image ?>">
 
                             </div>
-
                             <a class="prev" onclick="plusSlides(-1)">❮</a>
                             <a class="next" onclick="plusSlides(1)">❯</a>
                         </div>
@@ -69,7 +68,7 @@ include("Funciones/db.php");
     <article class="detail-content">
         <div class="detail">
             <h1 class="nombre_empresa"><?php echo $row["nombre_empresa"]; ?></h1>
-            <p class="Direccion"><label>Direccion: </label><?php echo $row["calle"], " ", $row["numeracion"]; ?></p>
+            <p class="Direccion"><label>Direccion: </label><?php echo $row["direccion"]; ?></p>
             <p class="comuna"><label>Comuna: </label><?php echo $row["comuna"]; ?></p>
             <p class="telefono"><label>Telefono: </label><?php echo $row["telefono_empresa"]; ?></p>
             <p class="descripcion"><span><?php echo $row["descripcion"]; ?></span></p>
