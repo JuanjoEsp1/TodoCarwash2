@@ -10,10 +10,8 @@ include("Funciones/db.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="Css/detalleEmpresa.css" type="text/css" />
     <title>Datos de empresa</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwPrp3BT2yJmxJQxIpIGNHn_p0hXxiTU8&sensor=false"></script>
 </head>
 
 <body>
@@ -26,10 +24,6 @@ include("Funciones/db.php");
     $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
 
     $sql = mysqli_query($conexion, "SELECT * FROM empresa WHERE idEmpresa='$nik'");
-
-
-
-
 
     if (mysqli_num_rows($sql) == 0) {
         header("Location: MostrarEmpresas2.php");
@@ -80,19 +74,10 @@ include("Funciones/db.php");
         </div>
     </article>
 
-    <div>
-        
-    </div>
+
         </section>
-
-    
-
-
-
-
-
-
-
+        
+        
         <!---------------------------------------------------------------->
 
         <?php
@@ -210,5 +195,6 @@ include("Funciones/db.php");
         dots[slideIndex - 1].className += " active";
     }
 </script>
+
 
 </html>
