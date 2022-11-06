@@ -382,4 +382,17 @@ label{
   }
   
 }
+#map {
+  position: relative;
+  height: 400px;
+  width: 600px;
+}
+
+.strong {
+  color: blue;
+  font-size: 16px;
+  margin: 0;
+  padding: 0px 4px;
+  font-weight: 600;
+}
 

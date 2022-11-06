@@ -13,6 +13,7 @@ include("Funciones/db.php");
 
     <link rel="stylesheet" href="Css/detalleEmpresa.css" type="text/css" />
     <title>Datos de empresa</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwPrp3BT2yJmxJQxIpIGNHn_p0hXxiTU8&sensor=false"></script>
 </head>
 
 <body>
