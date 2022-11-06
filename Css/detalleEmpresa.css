@@ -4,9 +4,6 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
-body {
-  margin: 0;
-}
 
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -44,8 +41,8 @@ body {
 }
 
 .container {
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
   position: fixed;
   display: none;
   max-width: 700px;
@@ -56,6 +53,7 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   margin-top: 50px;
   overflow: auto;
+  transform: translate(-50%, -50%);
 }
 
 .container .title {
@@ -222,8 +220,8 @@ img {
 
   width: 500px;
   float: left;
+  margin-right: 20px;
 }
-
 
 /* Next & previous buttons */
 .prev,
@@ -255,9 +253,6 @@ img {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-
-
 .active,
 .dot:hover {
   background-color: #717171;
@@ -288,10 +283,7 @@ img {
 }
 
 .detail-content {
-  
-  display: grid;
-  place-items: center;
-  
+  display: flex;
 }
 
 .btnregresar {
@@ -331,61 +323,75 @@ img {
   background: linear-gradient(-135deg, #0082e6, #1d2a5a);
 }
 
-.descripcion{
-  width: 500px;;
+.descripcion {
+  width: 500px;
 }
 
-.section-content{
-  display: grid;
-  place-items: center;
+.section-content {
+  /* display: inline-block; */
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-p{
+p {
   font-size: 20px;
-    
 }
-label{
+label {
   font-weight: 600;
 }
-.nombre_empresa{
+.nombre_empresa {
   text-align: center;
   font-size: 25px;
 }
 
-@media screen and (max-width:500px) {
-  .slideshow-container{
-  
-  position: relative;
-  width: 400px;
-  float: left;
+@media screen and (max-width: 500px) {
+
+  .section-content {
+    top: 0;
+    left:0;
+    transform: translate(0, 0);
+    
+  }
+  .slideshow-container {
+    position: relative;
+    width: 400px;
+    float: left;
   }
   .mySlides {
     display: none;
     width: 400px;
     height: 400px;
   }
-  
+
   img {
     vertical-align: middle;
     width: 400px;
     height: 400px;
   }
-  .descripcion{
-    width: 300px;;
+  .descripcion {
+    width: 300px;
   }
-  p{
+  p {
     font-size: 18px;
-      
   }
-  label{
+  label {
     font-weight: 500;
   }
-  
+  .map {
+    height: 100px;
+    width: 100px;
+  }
 }
-#map {
+.dmap {
+  padding: 20px;
+}
+.map {
   position: relative;
-  height: 400px;
-  width: 600px;
+  height: 300px;
+  width: 300px;
 }
 
 .strong {
@@ -395,4 +401,3 @@ label{
   padding: 0px 4px;
   font-weight: 600;
 }
-

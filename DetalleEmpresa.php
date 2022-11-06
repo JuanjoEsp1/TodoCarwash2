@@ -21,9 +21,6 @@ include("Funciones/db.php");
 
 <body>
 
-    <h2>Datos de la empresa &raquo; Perfil</h2>
-    <hr />
-
 
     <?php
     $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
@@ -34,12 +31,14 @@ include("Funciones/db.php");
         header("Location: MostrarEmpresas2.php");
     } else {
         $row = mysqli_fetch_assoc($sql);
-
-
-
     ?>
 
         <section class="section-content">
+<br>
+            <h2>Datos de la empresa &raquo; Perfil</h2>
+            <hr />
+
+
             <div class="slideshow-container">
                 <?php
                 $query = "SELECT * FROM images WHERE EMPRESA_idEmpresa ='$nik' ORDER BY id_imagen ASC";
@@ -65,7 +64,9 @@ include("Funciones/db.php");
     <?php }
             } ?>
     <h1>mapa</h1>
-    <div id="map"></div>
+    <div class="dmap">
+        <div id="map" class="map"></div>
+    </div>
     <article class="detail-content">
         <div class="detail">
             <h1 class="nombre_empresa"><?php echo $row["nombre_empresa"]; ?></h1>
@@ -79,9 +80,7 @@ include("Funciones/db.php");
             </div>
         </div>
     </article>
-
         </section>
-
 
         <?php
 
