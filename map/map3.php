@@ -57,7 +57,7 @@
             
 
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 13,
+                zoom: 14,
                 center: new google.maps.LatLng(<?php echo $rowmap["latitude"]; ?>, <?php echo $rowmap["longitude"]; ?>),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
