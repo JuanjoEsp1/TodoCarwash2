@@ -17,6 +17,7 @@ $correo = $_SESSION['correo_empresa'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Modificar Perfil</title>
@@ -153,8 +154,8 @@ $correo = $_SESSION['correo_empresa'];
                                 </div> -->
                                 <br>
                                 <div class="form-group">
-                                    <input type="submit" name="actualizar" class="btn btn-info" value="Actualizar Datos">
-                                    <a type="button" name="Volver" class="btn btn-danger" href="Perfil.php">Volver al Perfil</a>
+                                    <input type="submit" name="actualizar" class="btn btn-success" value="Actualizar Datos">
+                                    <a type="button" name="Volver" class="btn btn-danger" href="Perfil.php"><i class="bi bi-arrow-left-circle"></i>Volver al Perfil</a>
                                 </div>
                     <?php
                             }

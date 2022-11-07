@@ -59,7 +59,7 @@ $idEmpresa = $row['idEmpresa'];
                             <?php } ?>
                         </select>
 
-                        <input type="submit" name="buscar" class="btn btn-primary" value="Buscar Fecha">
+                        <input type="submit" name="buscar" class="btn btn-success" value="Buscar Fecha">
                         <input type=submit value="Reset" class="btn btn-warning" name="btnReset">
                     </form>
                     <br>

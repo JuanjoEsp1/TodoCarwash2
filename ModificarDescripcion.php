@@ -66,7 +66,7 @@ $correo = $_SESSION['correo_empresa'];
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <input type="submit" name="actualizar" class="btn btn-info" value="Actualizar Datos">
+                                    <input type="submit" name="actualizar" class="btn btn-success" value="Actualizar Datos">
 
                         <?php
                             }

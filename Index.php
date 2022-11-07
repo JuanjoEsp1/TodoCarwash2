@@ -19,9 +19,19 @@
 
 <body>
   <?php
+  error_reporting(0);
   include("Navbar.php");
   ?>
-
+  <?php
+  if ($_GET['success']) {
+    if ($_GET['success'] == 'agendado') {
+  ?>
+      <small class="alert alert-success">Agendado correctamente!</small>
+      <hr>
+  <?php
+    }
+  }
+  ?>
   <div id="slider">
     <figure>
       <img src="/IMG/wp001.jpg">
@@ -40,7 +50,7 @@
     <p class="w3-opacity"><i></i></p>
     <p class="w3-justify">TodoCarwash nació en el año 2021 medio de la pandemia, su principal objetivo es ofrecer una plataforma a todo pymes o Empresas de lavado de autos que necesitan publicar su servicio de agendamiento de horas.</p>
 
-    
+
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <p>Guillermo</p>

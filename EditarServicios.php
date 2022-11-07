@@ -14,6 +14,10 @@ include("Funciones/db.php");
             .content {
                 margin-top: 80px;
             }
+            
+            .offset-3{
+                margin-left: 1%;
+            }
         </style>
 
     </head>

@@ -95,7 +95,7 @@ $idEmpresa = $row['idEmpresa'];
 
                     <div class="paste-new-forms"></div>
                     <br>
-                    <button type="submit" name="guardar_servicio" class="btn btn-primary">Guardar Servicio</button>
+                    <button type="submit" name="guardar_servicio" class="btn btn-success">Guardar Servicio</button>
                     <a type="button" name="Volver" class="btn btn-danger" href="Perfil.php">Volver al Perfil</a>
                 </form>
             </div>

@@ -26,6 +26,9 @@ $idEmpresa = $row['idEmpresa'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link href="style.css" rel="stylesheet">
     <title>Perfil</title>
 </head>
@@ -35,7 +38,7 @@ $idEmpresa = $row['idEmpresa'];
     <!-- modal nuevo horario -->
     <div class="container">
         <div class="modal-body">
-            <h1>Registrar Horario de la semana</h1>
+            <h1>Registrar Horario</h1>
             <hr>
             <form id="horariofrm" method="post" action="/Process.php">
                 <input type="text" name="idEmpresa" value="<?php echo $row['idEmpresa']; ?>" readonly hidden required>
@@ -67,7 +70,7 @@ $idEmpresa = $row['idEmpresa'];
                     <option value="60">1 Hora</option>
                 </select>
                 <div class="modal-footer">
-                    <button type="submit" value="crear" class="btn btn-primary">Crear</button>
+                    <button type="submit" value="crear" class="btn btn-success">Crear</button>
                     <a type="button" name="Volver" class="btn btn-danger" href="Perfil.php">Volver al Perfil</a>
                 </div>
             </form>

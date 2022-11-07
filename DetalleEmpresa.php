@@ -153,12 +153,14 @@ include("Funciones/db.php");
             <div id="id02" class="container">
                 <div class="title">Agendar</div>
                 <div class="content">
-                    <form class="modal-content animate" action="Funciones/Agendar.php" method="post">
+                    <form class="modal-content animate" action="./Funciones/Agendar.php" method="post">
+                    <input type="text" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly >
 
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details" for="nomCLIENTE">Nombres</span>
                                 <input type="text" placeholder="Ingrese su nombre" name="nomCLIENTE" required>
+                                
                             </div>
                             <div class="input-box">
                                 <span class="details" for="apellCLIENTE">Apellidos</span>
@@ -166,7 +168,7 @@ include("Funciones/db.php");
                             </div>
                             <div class="input-box">
                                 <span class="details" for="rutCLIENTE">Rut</span>
-                                <input type="text" placeholder="Ingrese su Rut" name="rutCLIENTE" oninput="checkRut(this)" required>
+                                <input type="text" placeholder="Ingrese su Rut" id="rutCLIENTE" name="rutCLIENTE" oninput="checkRut(this)" required>
                             </div>
                             <div class="input-box">
                                 <span class="details" for="dirCLIENTE">Direccion</span>
