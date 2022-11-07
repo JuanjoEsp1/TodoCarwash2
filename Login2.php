@@ -30,7 +30,7 @@
 
             <div class="container" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
-                <span class="psw">ha olvidado la <a href="Resetpsw.php">contrasena?</a></span>
+                <span class="psw">ha olvidado la <a href="Resetpsw.php" class="pswname">contrasena?</a></span>
             </div>
 
 

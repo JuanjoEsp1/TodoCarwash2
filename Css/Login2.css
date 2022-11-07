@@ -68,6 +68,10 @@ img.avatar {
 .container {
     padding: 16px;
 }
+.pswname{
+    color: #1d2a5a;
+    text-decoration: solid;
+}
 
 span.psw {
     float: right;
