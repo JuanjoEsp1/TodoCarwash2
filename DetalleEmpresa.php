@@ -16,6 +16,7 @@ include("Funciones/db.php");
     <link rel="manifest" href="Image/site.webmanifest">
     <link rel="stylesheet" href="Css/detalleEmpresa.css" type="text/css" />
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwPrp3BT2yJmxJQxIpIGNHn_p0hXxiTU8&sensor=false"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <title>Datos de empresa</title>
 </head>
 
@@ -35,7 +36,7 @@ include("Funciones/db.php");
 
         <section class="section-content">
 <br>
-            <h2>Datos de la empresa &raquo; Perfil</h2>
+            <h2>Datos de la empresa &raquo; <?php echo $row["nombre_empresa"]; ?></h2>
             <hr />
 
 
@@ -50,9 +51,7 @@ include("Funciones/db.php");
                     <div class="slideshow-container">
                         <div class="mySlides fade">
                             <div class="logo_slider">
-
                                 <img src="./uploads/<?php echo $image ?>">
-
                             </div>
                             <a class="prev" onclick="plusSlides(-1)">❮</a>
                             <a class="next" onclick="plusSlides(1)">❯</a>
@@ -63,17 +62,16 @@ include("Funciones/db.php");
 
     <?php }
             } ?>
-    <h1>mapa</h1>
+    
     <div class="dmap">
         <div id="map" class="map"></div>
     </div>
     <article class="detail-content">
         <div class="detail">
-            <h1 class="nombre_empresa"><?php echo $row["nombre_empresa"]; ?></h1>
             <p class="Direccion"><label>Direccion: </label><?php echo $row["direccion"]; ?></p>
             <p class="comuna"><label>Comuna: </label><?php echo $row["comuna"]; ?></p>
             <p class="telefono"><label>Telefono: </label><?php echo $row["telefono_empresa"]; ?></p>
-            <p class="descripcion"><span><?php echo $row["descripcion"]; ?></span></p>
+            <p class="descripcion"><?php echo $row["descripcion"]; ?></p>
             <div class="a-button">
                 <button type="button" class="btnregresar" onclick="location.href='MostrarEmpresas2.php'">Regresar</button>
                 <button type="button" class="btnagendar" onclick="document.getElementById('id02').style.display='block'">Agendar</button>
