@@ -73,6 +73,27 @@ $fecha2=date("Y-m-d");
     <!--<h1><?php //echo $resfecha['fecha'];?></h1>
     <h1><?php //echo $sumfecha;?></h1> -->
 
+    <?php
+                if ($_GET['success']) {
+                    if ($_GET['success'] == 'registrado') {
+                ?>
+                        <small class="alert alert-success">Registrado correctamente!</small>
+                        <hr>
+                    <?php
+                    }
+                }
+                if (isset($_GET['error'])) {
+
+                    if ($_GET['error'] == 'error') {
+                    ?>
+                        <small class="alert alert-danger">Servicios no ingresados!</small>
+                        <hr>
+                    <?php
+                    }
+                }
+                ?>
+
+
 
     <div class="pago">
         <button type="button" class="btnpago" onclick="location.href='https://www.flow.cl/btn.php?token=i90ype2'">Suscripcion</button>

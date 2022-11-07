@@ -15,13 +15,11 @@ if($filas){
     header("location:Perfil.php");
 
 }else{
-    ?>
-    <?php
-    include("Index.php");
+    echo "<script>
+    alert('Usuario o contraseña invalido');
+    window.location= 'Index.php'
+</script>";
 
-  ?>
-  <h1 class="bad">ERROR DE AUTENTIFICACION</h1>
-  <?php
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);

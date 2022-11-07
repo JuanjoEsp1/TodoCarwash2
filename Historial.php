@@ -66,7 +66,9 @@ $idEmpresa = $row['idEmpresa'];
                 <tr>
                     <th>Nombre</th>
                     <th>Telefono</th>
-                    <th>Id Servicio</th>
+                    <th>Correo cliente</th>
+                    <th>Servicio</th>
+                    <th>Precio</th>
                     <th>Fecha</th>
                     <th>Hora</th>
                 </tr>
@@ -93,7 +95,9 @@ $idEmpresa = $row['idEmpresa'];
 						<tr>
                             <td>' . $row['nomCLIENTE'] . ' ' . $row['apellCLIENTE'] . '</td>
                             <td>' . $row['numCLIENTE'] . '</td>
+                            <td>' . $row['emailCLIENTE'] . '</td>
 							<td>' . $row['nombre_servicio'] . '</td>
+                            <td>' . '$'.$row['precio_servicio'] . '</td>
                             <td>' . date('d-m-Y', strtotime($row['fecha'])) . '</td>
                             <td>' . date('H:s', strtotime($row['hora'])) . '</td>	
 						</tr>

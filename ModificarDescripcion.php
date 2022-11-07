@@ -20,6 +20,16 @@ $correo = $_SESSION['correo_empresa'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Modificar Perfil</title>
+    <style type="text/css">
+        @media (max-width: 768px) {
+            .form{
+                position: absolute;
+            }
+        }
+        body{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,7 +49,7 @@ $correo = $_SESSION['correo_empresa'];
                     }
                 }
                 ?>
-                <form action="../Funciones/DescripcionFunc.php" method="POST" enctype="multipart/form-data">
+                <form action="../Funciones/DescripcionFunc.php" method="POST" enctype="multipart/form-data" class="form">
                     <?php
 
                     $sql = "SELECT * FROM empresa WHERE correo_empresa ='$correo'";

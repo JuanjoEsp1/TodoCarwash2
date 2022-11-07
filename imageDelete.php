@@ -3,10 +3,10 @@ session_start();
 require('Funciones/db.php');
 
 
-if(isset($_POST) && !empty($_POST['id'])){
+if(isset($_POST) && !empty($_POST['id_imagen'])){
 
 	   // select image to delete    
-	   $sql_select = "SELECT image FROM images WHERE id = ".$_POST['id'];
+	   $sql_select = "SELECT image FROM images WHERE id_imagen = ".$_POST['id_imagen'];
 	   $select_result = $conexion->query($sql_select);
 	    $row = $select_result->fetch_row();
 		$image_name = $row[0];
@@ -14,7 +14,7 @@ if(isset($_POST) && !empty($_POST['id'])){
 		// code to unlink(delete)  image physically from folder 
 		$unl = unlink("./uploads/".$image_name);
 
-		$sql = "DELETE FROM images WHERE id = ".$_POST['id'];
+		$sql = "DELETE FROM images WHERE id_imagen = ".$_POST['id_imagen'];
 		$conexion->query($sql);
 
 

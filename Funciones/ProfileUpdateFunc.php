@@ -9,8 +9,6 @@ if (isset($_POST['actualizar'])) {
 
     $NuevoNombreEmpresa  =    $_POST['nombreEmpresa'];
     $NuevoCorreoEmpresa  =    $_POST['correoEmpresa'];
-    $NuevaCalle =    $_POST['calleEmpresa'];
-    $NuevaNumeracion =    $_POST['numeracionEmpresa'];
     $NuevaComuna =    $_POST['comunaEmpresa'];
     $NuevoTelefono =    $_POST['telefonoEmpresa'];
     //$userImage    =   $_FILES['userImage'];
@@ -20,7 +18,7 @@ if (isset($_POST['actualizar'])) {
 
         $loggedInUser = $_SESSION['correo_empresa'];
 
-        $sql = "UPDATE empresa SET nombre_empresa = '$NuevoNombreEmpresa', correo_empresa ='$NuevoCorreoEmpresa', calle = '$NuevaCalle', numeracion = '$NuevaNumeracion', comuna = '$NuevaComuna', telefono_empresa = '$NuevoTelefono' WHERE correo_empresa = '$loggedInUser'";
+        $sql = "UPDATE empresa SET nombre_empresa = '$NuevoNombreEmpresa', correo_empresa ='$NuevoCorreoEmpresa', comuna = '$NuevaComuna', telefono_empresa = '$NuevoTelefono' WHERE correo_empresa = '$loggedInUser'";
 
         $results = mysqli_query($conexion, $sql);
 

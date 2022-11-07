@@ -25,9 +25,18 @@ $idEmpresa = $row['idEmpresa'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/Perfil.css" type="text/css" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Perfil</title>
+
+    <style type="text/css">
+        @media (min-width: 768px) {
+            .col-md-4 {
+                flex: 0 0 auto;
+                width: 25%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -52,7 +61,7 @@ $idEmpresa = $row['idEmpresa'];
 
         <div class="card mt-4">
             <div class="card-header">
-                <h4>Ingresar Servicios</h4>
+                <h4>Ingresar Servicio</h4>
                 <a href="javascript:void(0)" class="add-more-form float-end btn btn-primary">Agregar mas Servicios</a>
             </div>
             <div class="card-body">
@@ -65,7 +74,7 @@ $idEmpresa = $row['idEmpresa'];
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group mb-2">
-                                    <label for="">Servicios</label>
+                                    <label for="">Servicio</label>
                                     <input type="text" name="servicio[]" class="form-control" required placeholder="Nombre del servicio">
                                 </div>
                             </div>
@@ -73,6 +82,12 @@ $idEmpresa = $row['idEmpresa'];
                                 <div class="form-group mb-2">
                                     <label for="">Precio</label>
                                     <input type="number" name="precio[]" class="form-control" required placeholder="Ingrese precio">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-2">
+                                    <label for="">Descripcion servicio</label>
+                                    <textarea class="form-control" rows="5" placeholder="Descripcion del servicio" name="descripcion[]" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +117,7 @@ $idEmpresa = $row['idEmpresa'];
                                 <div class="row">\
                                     <div class="col-md-4">\
                                         <div class="form-group mb-2">\
-                                            <label for="">Servicios</label>\
+                                            <label for="">Servicio</label>\
                                             <input type="text" name="servicio[]" class="form-control" required placeholder="Nombre del servicio">\
                                         </div>\
                                     </div>\
@@ -112,6 +127,12 @@ $idEmpresa = $row['idEmpresa'];
                                             <input type="number" name="precio[]" class="form-control" required placeholder="Ingrese precio">\
                                         </div>\
                                     </div>\
+                                    <div class="col-md-4">\
+                                <div class="form-group mb-2">\
+                                    <label for="">Descripcion servicio</label>\
+                                    <textarea class="form-control" rows="5" placeholder="Descripcion del servicio" name="descripcion[]" required></textarea>\
+                                </div>\
+                            </div>\
                                     <div class="col-md-4">\
                                         <div class="form-group mb-2">\
                                             <br>\

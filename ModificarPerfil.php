@@ -20,6 +20,14 @@ $correo = $_SESSION['correo_empresa'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Modificar Perfil</title>
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            .form{
+                position: absolute;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -40,8 +48,6 @@ $correo = $_SESSION['correo_empresa'];
                     <?php
                     }
                 }
-
-
                 if (isset($_GET['error'])) {
 
                     if ($_GET['error'] == 'emptyNameAndEmail') {
@@ -62,7 +68,7 @@ $correo = $_SESSION['correo_empresa'];
                     }
                 }
                 ?>
-                <form action="../Funciones/ProfileUpdateFunc.php" method="POST" enctype="multipart/form-data">
+                <form action="../Funciones/ProfileUpdateFunc.php" method="POST" enctype="multipart/form-data" class="form">
                     <?php
 
                     $sql = "SELECT * FROM empresa WHERE correo_empresa ='$correo'";
@@ -83,15 +89,55 @@ $correo = $_SESSION['correo_empresa'];
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" name="calleEmpresa" class="form-control" value="<?php echo $row['calle']; ?>">
+                                    <input type="email" name="correoEmpresa" class="form-control" value="<?php echo $row['direccion']; ?>">
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <input type="number" name="numeracionEmpresa" class="form-control" value="<?php echo $row['numeracion']; ?>">
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <input type="text" name="comunaEmpresa" class="form-control" value="<?php echo $row['comuna']; ?>">
+                                    <select name="comunaEmpresa" class="form-control">
+                                        <option value="<?php echo $row['comuna']; ?>"><?php echo $row['comuna']; ?></option>
+                                        <option value="Buin">Buin</option>
+                                        <option value="Calera de Tango">Calera de Tango</option>
+                                        <option value="Cerrillos">Cerrillos</option>
+                                        <option value="Cerro Navia">Cerro Navia</option>
+                                        <option value="Colina">Colina</option>
+                                        <option value="Conchali">Conchalí</option>
+                                        <option value="El Bosque">El Bosque</option>
+                                        <option value="Estación Central">Estación Central</option>
+                                        <option value="Huechuraba">Huechuraba</option>
+                                        <option value="Independencia">Independencia</option>
+                                        <option value="La Cisterna">La Cisterna</option>
+                                        <option value="La Florida">La Florida</option>
+                                        <option value="La Granja">La Granja</option>
+                                        <option value="La Pintana">La Pintana</option>
+                                        <option value="La Reina">La Reina</option>
+                                        <option value="Lampa">Lampa</option>
+                                        <option value="Las Condes">Las Condes</option>
+                                        <option value="Lo Barnechea">Lo Barnechea</option>
+                                        <option value="Lo Espejo">Lo Espejo</option>
+                                        <option value="Lo Prado">Lo Prado</option>
+                                        <option value="Macul">Macul</option>
+                                        <option value="Maipu">Maipú</option>
+                                        <option value="Ñuñoa">Ñuñoa</option>
+                                        <option value="Paine">Paine</option>
+                                        <option value="Pedro Aguirre Cerda">Pedro Aguirre Cerda</option>
+                                        <option value="Peñalolen">Peñalolén</option>
+                                        <option value="Pirque">Pirque</option>
+                                        <option value="Providencia">Providencia</option>
+                                        <option value="Pudahuel">Pudahuel</option>
+                                        <option value="Puente Alto">Puente Alto</option>
+                                        <option value="Quilicura">Quilicura</option>
+                                        <option value="Quinta Normal">Quinta Normal</option>
+                                        <option value="Recoleta">Recoleta</option>
+                                        <option value="Renca">Renca</option>
+                                        <option value="San Bernardo">San Bernardo</option>
+                                        <option value="San Joaquin">San Joaquín</option>
+                                        <option value="San Jose de Maipo">San José de Maipo</option>
+                                        <option value="San Miguel">San Miguel</option>
+                                        <option value="San Ramon">San Ramón</option>
+                                        <option value="Santiago">Santiago</option>
+                                        <option value="Til Til">Til Til</option>
+                                        <option value="Vitacura">Vitacura</option>
+                                    </select>
                                 </div>
                                 <br>
                                 <div class="form-group">
@@ -108,6 +154,7 @@ $correo = $_SESSION['correo_empresa'];
                                 <br>
                                 <div class="form-group">
                                     <input type="submit" name="actualizar" class="btn btn-info" value="Actualizar Datos">
+                                    <a type="button" name="Volver" class="btn btn-danger" href="Perfil.php">Volver al Perfil</a>
                                 </div>
                     <?php
                             }
@@ -119,7 +166,6 @@ $correo = $_SESSION['correo_empresa'];
 
                 </form>
 
-                <a type="button" name="Volver" class="btn btn-danger" href="Perfil.php">Volver al Perfil</a>
             </div>
 
         </div>

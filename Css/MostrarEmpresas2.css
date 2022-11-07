@@ -9,6 +9,7 @@
 body{
     
     background: linear-gradient(135deg, #0082e6, #1d2a5a);
+    height: 100vh;
 }
 h2 {
   text-align: center;

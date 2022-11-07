@@ -61,6 +61,13 @@ $idEmpresa = $row['idEmpresa'];
             width: 300px !important;
             height: 160px !important;
         }
+        .row{
+            margin-right: 50px;
+        }
+        .btn-danger{
+            position: absolute;
+            margin-left: 20px;
+        }
     </style>
 </head>
 
@@ -68,7 +75,7 @@ $idEmpresa = $row['idEmpresa'];
 
 
     <div class="container">
-
+    
         <h3 style="text-align: center; font-size: 35px;" ><i><b>Imagenes</b></i></h3>
 
         <form action="./imageUpload.php" class="form-image-upload" method="POST" enctype="multipart/form-data">
@@ -106,6 +113,7 @@ $idEmpresa = $row['idEmpresa'];
                 <div class="col-md-2">
                     <br />
                     <button type="submit" class="btn btn-success">Upload</button>
+                    <a type="button" name="Volver" class="btn btn-danger" href="Perfil.php">Volver al Perfil</a>
                 </div>
             </div>
         </form>
@@ -133,7 +141,7 @@ $idEmpresa = $row['idEmpresa'];
 
                         <!-- form to delete image -->
                         <form action="./imageDelete.php" method="POST">
-                            <input type="hidden" name="id" value="<?php echo $image['id'] ?>">
+                            <input type="hidden" name="id_imagen" value="<?php echo $image['id_imagen'] ?>">
                             <button onclick="return confirm('Esta seguro de eliminar la imagen?')" type="submit" title="delete" class="close-icon btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
                         </form>
 

@@ -125,8 +125,10 @@ $diferenciaDias = $FechaFin3 - $FechaIn3;
         }
        
     }
-    echo "<br>Las horas se ingresaron exitosamente";
-    header('location: Perfil.php');
+    header("Location: Perfil.php?success=registrado");
+    exit;
+    
+    
     
 
 
