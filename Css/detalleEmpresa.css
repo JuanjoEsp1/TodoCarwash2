@@ -221,7 +221,9 @@ img {
   width: 500px;
   float: left;
   margin-right: 20px;
+  box-shadow: 5px 5px 7px 0px #1d2a5a;
 }
+
 
 /* Next & previous buttons */
 .prev,
@@ -342,10 +344,7 @@ p {
 label {
   font-weight: 600;
 }
-.nombre_empresa {
-  text-align: center;
-  font-size: 25px;
-}
+
 
 @media screen and (max-width: 500px) {
 
@@ -359,6 +358,8 @@ label {
     position: relative;
     width: 400px;
     float: left;
+    padding-bottom: 8px;
+    box-shadow: 0px 0px 0px 0px;
   }
   .mySlides {
     display: none;
@@ -372,7 +373,8 @@ label {
     height: 400px;
   }
   .descripcion {
-    width: 300px;
+    width: 350px;
+    
   }
   p {
     font-size: 18px;
@@ -380,19 +382,29 @@ label {
   label {
     font-weight: 500;
   }
-  .map {
-    height: 100px;
-    width: 100px;
-  }
-}
-.dmap {
-  padding: 20px;
+ 
+  
+
 }
 .map {
-  position: relative;
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 350px;
+  border-radius: 10px;
+  border: 2px solid #1d2a5a;
 }
+.dmap {
+  
+  padding: 30px;
+}
+@media (min-width: 800px) { 
+  .map {
+    position: relative;
+    height: 350px;
+    width: 350px;
+  }
+  
+}
+
 
 .strong {
   color: blue;
@@ -401,3 +413,5 @@ label {
   padding: 0px 4px;
   font-weight: 600;
 }
+
+

@@ -38,9 +38,7 @@
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
     <h2 class="w3-wide">Sobre Nosotros</h2>
     <p class="w3-opacity"><i></i></p>
-    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p class="w3-justify">TodoCarwash nació en el año 2021 medio de la pandemia, su principal objetivo es ofrecer una plataforma a todo pymes o Empresas de lavado de autos que necesitan publicar su servicio de agendamiento de horas.</p>
 
     
     <div class="w3-row w3-padding-32">
@@ -71,7 +69,7 @@
           <header>
             <h3>Mision</h3>
           </header>
-          <p class="p-def">Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+          <p class="p-def">Nuestro proyecto busca liderar el mercado de la búsqueda de lavados de vehículos en Chile, otorgando el mayor grado de satisfacción a los clientes.</p>
         </section>
 
       </div>
@@ -82,7 +80,7 @@
           <header>
             <h3>Vision</h3>
           </header>
-          <p class="p-def">Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+          <p class="p-def">Ser el principal referente de búsqueda de lavados de vehículos a través de internet en Chile.</p>
         </section>
 
       </div>
@@ -93,7 +91,7 @@
           <header>
             <h3>Valores</h3>
           </header>
-          <p class="p-def">Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+          <p class="p-def">Todocarwash se respalda de un equipo que busca facilitar la búsqueda y generar confianza entre los centros de lavado automotriz y sus clientes.</p>
         </section>
 
       </div>

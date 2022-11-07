@@ -21,10 +21,6 @@
 
 		<div class="footer-center">
 
-			<div>
-				<i class="fa fa-map-marker"></i>
-				<p><span>Avenida</span> Santiago, Chile</p>
-			</div>
 
 			<div>
 				<i class="fa fa-phone"></i>
@@ -41,7 +37,7 @@
 
 			<p class="footer-company-about">
 				<span>Sobre nosotros</span>
-				Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+				TodoCarwash nació en el año 2021 medio de la pandemia, su principal objetivo es ofrecer una plataforma a todo pymes o Empresas de lavado de autos que necesitan publicar su servicio de agendamiento de horas.
 			</p>
 
 			<div class="footer-icons">
