@@ -65,6 +65,7 @@ $idEmpresa = $row['idEmpresa'];
                             <th>ID</th>
                             <th>NOMBRE</th>
                             <th>PRECIO</th>
+                            <th>Descripcion</th>
                             <th>ACCIONES</th>
                         </tr>
                         <?php
@@ -78,10 +79,11 @@ $idEmpresa = $row['idEmpresa'];
                             <td>' . $row['idSERVICIO'] . '</td>
                             <td>' . $row['nombre_servicio'] . '</td>
                             <td>' . $row['precio_servicio'] . '</td>
+                            <td>' . $row['descripcion'] . '</td>
                             <td>
 
 								<a href="EditarServicios.php?nik=' . $row['idSERVICIO'] . '" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-								<a href="ModificarHoras.php?aksi=delete&nik=' . $row['idSERVICIO'] . '" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos ' . $row['nombre_servicio'] . '?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+								<a href="ModificarServicios.php?aksi=delete&nik=' . $row['idSERVICIO'] . '" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos ' . $row['nombre_servicio'] . '?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 							</td>			
 						</tr>
 						';

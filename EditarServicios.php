@@ -35,9 +35,10 @@ include("Funciones/db.php");
                 if (isset($_POST['save'])) {
                     $codigo = mysqli_real_escape_string($conexion, (strip_tags($_POST["codigo"], ENT_QUOTES))); 
                     $nombre = mysqli_real_escape_string($conexion, (strip_tags($_POST["nombre"], ENT_QUOTES))); 
-                    $precio = mysqli_real_escape_string($conexion, (strip_tags($_POST["precio"], ENT_QUOTES))); 
+                    $precio = mysqli_real_escape_string($conexion, (strip_tags($_POST["precio"], ENT_QUOTES)));
+                    $descripcion = mysqli_real_escape_string($conexion, (strip_tags($_POST["descripcion"], ENT_QUOTES)));
 
-                    $update = mysqli_query($conexion, "UPDATE servicio SET nombre_servicio='$nombre', precio_servicio='$precio' WHERE idSERVICIO='$nik'") 
+                    $update = mysqli_query($conexion, "UPDATE servicio SET nombre_servicio='$nombre', precio_servicio='$precio', descripcion = '$descripcion' WHERE idSERVICIO='$nik'") 
 
                     or die('error');
 
@@ -60,15 +61,21 @@ include("Funciones/db.php");
                         </article>
                     </article>
                     <article class="form-group">
-                        <label class="col-sm-3 control-label">Fecha</label>
+                        <label class="col-sm-3 control-label">Nombre Servicio</label>
                         <article class="col-sm-4">
                             <input type="text" name="nombre" value="<?php echo $row ['nombre_servicio']; ?>" class="form-control" required>
                         </article>
                     </article>
                     <article class="form-group">
-                        <label class="col-sm-3 control-label">Hora</label>
+                        <label class="col-sm-3 control-label">Precio</label>
                         <article class="col-sm-4">
                             <input type="number" name="precio" value="<?php echo $row ['precio_servicio']; ?>" class="form-control" required>
+                        </article>
+                    </article>
+                    <article class="form-group">
+                        <label class="col-sm-3 control-label">Descripcion</label>
+                        <article class="col-sm-4">
+                        <textarea name="descripcion" class="form-control" rows="5"><?php echo $row['descripcion']; ?></textarea>
                         </article>
                     </article>
                   
