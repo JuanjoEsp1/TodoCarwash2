@@ -90,7 +90,7 @@ $correo = $_SESSION['correo_empresa'];
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <input type="email" name="correoEmpresa" class="form-control" value="<?php echo $row['direccion']; ?>">
+                                    <input type="text" name="direccion" class="form-control" value="<?php echo $row['direccion']; ?>">
                                 </div>
                                 <br>
                                 <div class="form-group">
