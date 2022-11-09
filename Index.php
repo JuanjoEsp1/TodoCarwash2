@@ -5,7 +5,7 @@ $date = date("Y-m-d");
 
 $userIP = $_SERVER['REMOTE_ADDR'];
 
-$updateQuery = "UPDATE `visitas` SET `ip`='$userIP', `visitas`=`visitas` +1 WHERE  `date` ='$date'";
+$updateQuery = "UPDATE `visitas` SET `ip`='$userIP', `visitas`=`visitas` +1 ,`date` ='$date'";
 
 mysqli_query($conexion, $updateQuery);
 
