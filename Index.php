@@ -1,3 +1,15 @@
+<?php
+include("Funciones/db.php");
+
+$date = date("Y-m-d");
+
+$userIP = $_SERVER['REMOTE_ADDR'];
+
+$updateQuery = "UPDATE `visitas` SET `ip`='$userIP', `visitas`=`visitas` +1 WHERE  `date` ='$date'";
+
+mysqli_query($conexion, $updateQuery);
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,6 +34,8 @@
   error_reporting(0);
   include("Navbar.php");
   ?>
+
+  
   <?php
   if ($_GET['success']) {
     if ($_GET['success'] == 'agendado') {
@@ -106,7 +120,11 @@
 
       </div>
     </div>
+    
   </section>
+  <div>
+    
+  </div>
 
   <?php include("footer.php"); ?>
 </body>
