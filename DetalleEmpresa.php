@@ -26,6 +26,10 @@ include("Funciones/db.php");
     <?php
     $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
 
+    $updateQuery = "UPDATE `empresa` SET `visitas`=`visitas` +1 WHERE idEmpresa = '$nik'";
+
+    mysqli_query($conexion, $updateQuery);
+
     $sql = mysqli_query($conexion, "SELECT * FROM empresa WHERE idEmpresa='$nik'");
 
     if (mysqli_num_rows($sql) == 0) {
@@ -35,7 +39,7 @@ include("Funciones/db.php");
     ?>
 
         <section class="section-content">
-<br>
+            <br>
             <h2>Datos de la empresa &raquo; <?php echo $row["nombre_empresa"]; ?></h2>
             <hr />
 
@@ -62,7 +66,7 @@ include("Funciones/db.php");
 
     <?php }
             } ?>
-    
+
     <div class="dmap">
         <div id="map" class="map"></div>
     </div>
@@ -154,13 +158,13 @@ include("Funciones/db.php");
                 <div class="title">Agendar</div>
                 <div class="content">
                     <form class="modal-content animate" action="./Funciones/Agendar.php" method="post">
-                    <input type="text" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly >
+                        <input type="text" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly>
 
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details" for="nomCLIENTE">Nombres</span>
                                 <input type="text" placeholder="Ingrese su nombre" name="nomCLIENTE" required>
-                                
+
                             </div>
                             <div class="input-box">
                                 <span class="details" for="apellCLIENTE">Apellidos</span>
