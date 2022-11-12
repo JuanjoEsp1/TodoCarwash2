@@ -22,6 +22,7 @@
         <ul>
             <li><a class="active" href="Index.php">Home</a></li>
             <li><a href="MostrarEmpresas2.php">Empresas de Lavado</a></li>
+            <li><a href="consultaHora.php">Consulta Reserva</a></li>
             <li><a href="Contacto.php">Contacto</a></li>
             <li><a href="Registrar.php">Registrar</a></li>
             <li class="login"><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar Sesion</a></li>
