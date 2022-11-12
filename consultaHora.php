@@ -71,7 +71,7 @@ error_reporting(0);
 
             if ($row['estado'] == "activa")
                 echo
-                '<a href="Cancelar.php?id=' . $row['idAGENDAMIENTO'] . '" title="Cancelar" onclick="return confirm(\'Esta seguro de cancelar la hora agenda ' . date('d-m-Y', strtotime($row['fecha'])) . ' a las ' . $row['hora'] . '?\')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>';
+                '<a href="cancelarhora.php?id=' . $row['idAGENDAMIENTO'] . '" title="Cancelar" onclick="return confirm(\'Esta seguro de cancelar la hora agenda ' . date('d-m-Y', strtotime($row['fecha'])) . ' a las ' . $row['hora'] . '?\')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>';
             '</td>			
                 </tr>
                 ';
