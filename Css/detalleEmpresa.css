@@ -386,7 +386,11 @@ label {
   border: 2px solid #1d2a5a;
 }
 .dmap {
-  padding: 30px;
+  padding: 50px;
+  margin-top: 100%;
+}
+.logo_slider{
+  margin-top: 100%;
 }
 @media (min-width: 800px) {
   .map {
