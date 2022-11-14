@@ -19,7 +19,6 @@ include("Funciones/db.php");
                 margin-left: 1%;
             }
         </style>
-
     </head>
     <body>
         <section class="container">
