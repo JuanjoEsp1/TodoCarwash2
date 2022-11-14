@@ -9,7 +9,7 @@ include("Funciones/db.php");
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Datos de empleados</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="Css/bootstrap.min.css" rel="stylesheet">
         <style>
             .content {
                 margin-top: 80px;
