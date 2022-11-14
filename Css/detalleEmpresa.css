@@ -403,3 +403,33 @@ label {
   padding: 0px 4px;
   font-weight: 600;
 }
+
+.valoracion {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.valoracion p, input {
+  text-align: center;
+}
+.valoracion label {
+  font-size: 40px;
+  color: grey;
+}
+input[type="radio"] {
+  display: none;
+}
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+
+.valoracion label:hover,
+label:hover ~ label {
+  color: orange;
+}
+input[type="radio"]:checked ~ label {
+  color: orange;
+}

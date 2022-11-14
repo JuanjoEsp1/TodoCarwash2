@@ -9,7 +9,7 @@ include("Funciones/db.php");
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <link rel="apple-touch-icon" sizes="180x180" href="Image/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Image/favicon-16x16.png">
@@ -82,6 +82,25 @@ include("Funciones/db.php");
             </div>
         </div>
     </article>
+    <div class="valoracion">
+        <form action="./valoracion.php" method="POST">
+            <input type="text" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly>
+            <p class="clasificacion">
+                <input id="radio1" type="radio" name="estrellas" value="5">
+                <label for="radio1">★</label>
+                <input id="radio2" type="radio" name="estrellas" value="4">
+                <label for="radio2">★</label>
+                <input id="radio3" type="radio" name="estrellas" value="3">
+                <label for="radio3">★</label>
+                <input id="radio4" type="radio" name="estrellas" value="2">
+                <label for="radio4">★</label>
+                <input id="radio5" type="radio" name="estrellas" value="1">
+                <label for="radio5">★</label>
+            </p>
+            <input type="email" name="emailCliente" placeholder="correo@gmail.com" required>
+            <button type="submit" value="valorar" class="btnvalorar">Valorar</button>
+        </form>
+    </div>
         </section>
 
         <?php
