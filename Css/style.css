@@ -1,302 +1,295 @@
+@import url("css2/bootstrap-datetimepicker.css");
+@import url("css2/font-awesome.min.css");
+@import url("css2/bootstrap.min.css");
+@import url("css2/animate.css");
 
-
-@import url('css2/bootstrap-datetimepicker.css');
-@import url('css2/font-awesome.min.css');
-@import url('css2/bootstrap.min.css');
-@import url('css2/animate.css');
-
-
-body{
-	font-family: 'Maven Pro', sans-serif;
-    background: url(images/bg.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;   
-    text-align: center;
+body {
+  font-family: "Maven Pro", sans-serif;
+  background: url(images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
 }
 
-
-a{
-	-moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    border: 1px solid #777;
-    color: #777;
+a {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  border: 1px solid #777;
+  color: #777;
 }
 
-a:hover{
-    color: #777;
+a:hover {
+  color: #777;
 }
 
-button{
-	-moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
+button {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
-
 
 label {
-	float: left;
-    margin-top: 2px;
-    margin-bottom: 0px;
+  float: left;
+  margin-top: 2px;
+  margin-bottom: 0px;
 }
 
-
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-    padding: 3px 3px 8px 3px;
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  padding: 3px 3px 8px 3px;
 }
 
 .bootstrap-datetimepicker-widget a[data-action] {
-    border: none;
+  border: none;
 }
 
 .modal-backdrop {
-    background-color: #AD0000;
+  background-color: #ad0000;
 }
 
-
-.modal-content{
-    float: left;
-    width: 100%;	
+.modal-content {
+  float: left;
+  width: 100%;
 }
 
 .modal-header {
-    background: #0A961A;
-    color: #FFF;
-    float: left;
-    width: 100%;
+  background: #0a961a;
+  color: #fff;
+  float: left;
+  width: 100%;
 }
 
 .modal-body {
-    float: left;
-    width: 100%;
+  float: left;
+  width: 100%;
 }
 
 .modal-footer {
-    float: left;
-    width: 100%;
+  float: left;
+  width: 100%;
 }
 
-#menu{
-    margin-top: 30px;
+#menu {
+  margin-top: 30px;
 }
 
-#days-chose{
-	display: none;
+#days-chose {
+  display: none;
 }
 
-#days-list{
-    margin-top: 10px;
-    margin-bottom: 5px;	
+#days-list {
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-#days-list .day-option{
-    display: inline-block;
-    width: 13.5%;
-    text-align: center;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    padding: 2px 0px 3px 0px;
+#days-list .day-option {
+  display: inline-block;
+  width: 13.5%;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 2px 0px 3px 0px;
 }
 
-.active-day,.active-day:hover,.active-day:focus,.active-day:active{
-    border: 1px solid #EC901D;
-    background: #EC901D;
-    color: #fff;	
+.active-day,
+.active-day:hover,
+.active-day:focus,
+.active-day:active {
+  border: 1px solid #ec901d;
+  background: #ec901d;
+  color: #fff;
 }
 
-
-.error{
-    float: left;
-    width: 100%;
-    color: #F50000;	
+.error {
+  float: left;
+  width: 100%;
+  color: #f50000;
 }
 
-
-#mynew{
-    margin-top: 30px;
-    width: 100%;
-    float: left;
-    display: none;    
+#mynew {
+  margin-top: 30px;
+  width: 100%;
+  float: left;
+  display: none;
 }
 
-
-.td-time{
-    width: 230px;
-    text-align: center;    
+.td-time {
+  width: 230px;
+  text-align: center;
 }
 
 .table-bordered {
-    background: #FFF;
+  background: #fff;
 }
 
-#alert-error{
-    color: #fff;
-    background: #C31313;
-    position: absolute;
-    font-size: 18px;
-    border-radius: 4px;
-    text-align: center;
-    padding: 5px 15px;
-    bottom: 15px;
-    right: 15px;
-    display: none;
-    z-index: 9999999;  
+#alert-error {
+  color: #fff;
+  background: #c31313;
+  position: absolute;
+  font-size: 18px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 5px 15px;
+  bottom: 15px;
+  right: 15px;
+  display: none;
+  z-index: 9999999;
 }
 
-#mynew .btn-group-xs>.btn, .btn-xs {
-    padding: 0px 3px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 0px;
-    margin: 5px auto;
+#mynew .btn-group-xs > .btn,
+.btn-xs {
+  padding: 0px 3px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 0px;
+  margin: 5px auto;
 }
 
-.nopadding{
-    padding: 0px;
+.nopadding {
+  padding: 0px;
 }
 
-
-.opacityelement{
-    opacity: 0.5;
+.opacityelement {
+  opacity: 0.5;
 }
 
-.addinfo{
-    display: none;
+.addinfo {
+  display: none;
 }
 
-.delinfo{
-    display: none;
+.delinfo {
+  display: none;
 }
 
-
-.label-desc{
-    text-align: center;
-    width: 100%;
-    display: block;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 4px;
-    color: #fff;
-    font-weight: 100;
-    font-size: 12px;  
+.label-desc {
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 100;
+  font-size: 12px;
 }
 
-
-.label-desc a{
-    color: #FFF;
-    float: right;
-    margin-right: 5px;
-    cursor: pointer; 
-    border: none;
-    display: none;   
+.label-desc a {
+  color: #fff;
+  float: right;
+  margin-right: 5px;
+  cursor: pointer;
+  border: none;
+  display: none;
 }
 
-.label-desc:hover a{
-    display: block;
+.label-desc:hover a {
+  display: block;
 }
 
-.horario-name{
-    color: #FFF;
+.horario-name {
+  color: #fff;
 }
 
-.purple-label{
-   background: #8452D4;
-   color: #FFF;
+.purple-label {
+  background: #8452d4;
+  color: #fff;
 }
 
-.red-label{
-   background: #D45252;
-   color: #FFF; 
+.red-label {
+  background: #d45252;
+  color: #fff;
 }
 
-.blue-label{
-  background: #52B6D4;
-  color: #FFF;    
+.blue-label {
+  background: #52b6d4;
+  color: #fff;
 }
 
-.pink-label{
-  background: #D659AA;
-  color: #FFF;    
+.pink-label {
+  background: #d659aa;
+  color: #fff;
 }
 
-.green-label{
-    background: #46BD28;
-    color: #FFF;   
+.green-label {
+  background: #46bd28;
+  color: #fff;
 }
 
-
-.horarioheader{
-    color: #FFF;
-    background: #5cb85c;    
+.horarioheader {
+  color: #fff;
+  background: #5cb85c;
 }
 
-.thead{
-    font-size: 16px;
-    background: #000;
-    color: #FFF;
+.thead {
+  font-size: 16px;
+  background: #000;
+  color: #fff;
 }
 
-.td-time{
-    background: #ffffff;
-    color: #3392b7;
-    font-size: 16px;
+.td-time {
+  background: #ffffff;
+  color: #3392b7;
+  font-size: 16px;
 }
 
-.hideedittime{
-    display: none;
+.hideedittime {
+  display: none;
 }
 
-.td-line{
-    width: 111px;
+.td-line {
+  width: 111px;
 }
 
-.panel{
-    float: left;
-    width: 100%;
+.panel {
+  float: left;
+  width: 100%;
 }
 
-.panel-body{
-    float: left;
-    width: 100%;
+.panel-body {
+  float: left;
+  width: 100%;
 }
 
-.panel-heading{
-    float: left;
-    width: 100%;
+.panel-heading {
+  float: left;
+  width: 100%;
 }
 
-.panel-info>.panel-heading {
-    color: #FFF;
-    background-color: #31708f;
-    border-color: #31708f;
+.panel-info > .panel-heading {
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
 }
 
-.icon-clock-index{
-    color: rgb(255, 255, 255);
-    font-size: 7em;
-    margin-top: 185px;
+.icon-clock-index {
+  color: rgb(255, 255, 255);
+  font-size: 7em;
+  margin-top: 185px;
 }
-
 
 .modal-lg {
-    width: 99%;
-    margin-left: 0px;
+  width: 99%;
+  margin-left: 0px;
 }
 
-#modalblue{
-    background: #257dc7;
+#modalblue {
+  background: #257dc7;
 }
 
-
-.changethetime{
-    display: none;
+.changethetime {
+  display: none;
 }
 
-.td-time:hover .changethetime{
-    display: inline-block;
+.td-time:hover .changethetime {
+  display: inline-block;
 }

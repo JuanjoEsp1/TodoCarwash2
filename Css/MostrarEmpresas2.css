@@ -4,12 +4,10 @@
   box-sizing: border-box;
   font-family: sans-serif;
   color: black;
-
 }
-body{
-    
-    background: linear-gradient(135deg, #0082e6, #1d2a5a);
-    height: 100vh;
+body {
+  background: linear-gradient(135deg, #0082e6, #1d2a5a);
+  height: 100vh;
 }
 h2 {
   text-align: center;
@@ -144,138 +142,135 @@ main .card a {
   label {
     font-size: 18px;
   }
-  body{
+  body {
     height: auto;
   }
-  .burbuja{
+  .burbuja {
     display: none;
   }
 }
 
-
 /* burbujas */
 
-.burbuja{
-    border-radius: 50%;
-    background: #fff;
-    opacity: .3;
+.burbuja {
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.3;
 
-    position: absolute;
-    bottom: -150;
-    z-index: -1;
-    animation: burbujas 3s linear infinite ;
+  position: absolute;
+  bottom: -150;
+  z-index: -1;
+  animation: burbujas 3s linear infinite;
 }
 
-.burbuja:nth-child(1){
-    width: 80px;
-    height: 80px;
-    left: 5%;
-    animation-duration: 3s;
-    animation-delay: 3s;
-    
+.burbuja:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 5%;
+  animation-duration: 3s;
+  animation-delay: 3s;
 }
 
-.burbuja:nth-child(2){
-    width: 100px;
-    height: 100px;
-    left: 35%;
-    animation-duration: 3s;
-    animation-delay: 5s;
+.burbuja:nth-child(2) {
+  width: 100px;
+  height: 100px;
+  left: 35%;
+  animation-duration: 3s;
+  animation-delay: 5s;
 }
 
-.burbuja:nth-child(3){
-    width: 20px;
-    height: 20px;
-    left: 15%;
-    animation-duration: 3s;
-    animation-delay: 7s;
-    z-index: 1;
+.burbuja:nth-child(3) {
+  width: 20px;
+  height: 20px;
+  left: 15%;
+  animation-duration: 3s;
+  animation-delay: 7s;
+  z-index: 1;
 }
 
-.burbuja:nth-child(4){
-    width: 50px;
-    height: 50px;
-    left: 90%;
-    animation-duration: 6s;
-    animation-delay: 3s;
+.burbuja:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  left: 90%;
+  animation-duration: 6s;
+  animation-delay: 3s;
 }
 
-.burbuja:nth-child(5){
-    width: 70px;
-    height: 70px;
-    left: 65%;
-    animation-duration: 3s;
-    animation-delay: 1s;
+.burbuja:nth-child(5) {
+  width: 70px;
+  height: 70px;
+  left: 65%;
+  animation-duration: 3s;
+  animation-delay: 1s;
 }
 
-.burbuja:nth-child(6){
-    width: 20px;
-    height: 20px;
-    left: 50%;
-    animation-duration: 4s;
-    animation-delay: 5s;
-    z-index: 1;
+.burbuja:nth-child(6) {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  animation-duration: 4s;
+  animation-delay: 5s;
+  z-index: 1;
 }
 
-.burbuja:nth-child(7){
-    width: 20px;
-    height: 20px;
-    left: 50%;
-    animation-duration: 4s;
-    animation-delay: 5s;
-    z-index: 1;
+.burbuja:nth-child(7) {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  animation-duration: 4s;
+  animation-delay: 5s;
+  z-index: 1;
 }
 
-.burbuja:nth-child(8){
-    width: 100;
-    height: 100px;
-    left: 52%;
-    animation-duration: 5s;
-    animation-delay: 5s;
+.burbuja:nth-child(8) {
+  width: 100;
+  height: 100px;
+  left: 52%;
+  animation-duration: 5s;
+  animation-delay: 5s;
 }
 
-.burbuja:nth-child(9){
-    width: 65px;
-    height: 65px;
-    left: 51%;
-    animation-duration: 3s;
-    animation-delay: 2s;
+.burbuja:nth-child(9) {
+  width: 65px;
+  height: 65px;
+  left: 51%;
+  animation-duration: 3s;
+  animation-delay: 2s;
 }
 
-.burbuja:nth-child(10){
-    width: 40px;
-    height: 40px;
-    left: 35%;
-    animation-duration: 3s;
-    animation-delay: 4s;
+.burbuja:nth-child(10) {
+  width: 40px;
+  height: 40px;
+  left: 35%;
+  animation-duration: 3s;
+  animation-delay: 4s;
 }
 
-
-@keyframes burbujas{
-    0%{
-        bottom: 0;
-        opacity: 0;
-    }
-    30%{
-        transform: translateX(30px);
-    }
-    50%{
-        opacity: .4;
-    }
-    100%{
-        bottom: 100vh;
-        opacity: 0;
-    }
+@keyframes burbujas {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(30px);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
 }
 
-@keyframes movimiento{
-    0%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(30px);
-    }
-    100%{
-        transform: translateY(0);
-    }
+@keyframes movimiento {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

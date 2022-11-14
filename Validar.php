@@ -10,11 +10,11 @@ $resultado=mysqli_query($conexion,$consulta);
 
 $filas=mysqli_num_rows($resultado);
 
-if($filas){
+if ($filas) {
   
     header("location:Perfil.php");
 
-}else{
+} else {
     echo "<script>
     alert('Usuario o contraseña invalido');
     window.location= 'Index.php'

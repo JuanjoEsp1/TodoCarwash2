@@ -1,29 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-    margin: auto;
-    font-family: 'Poppins', sans-serif;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
 }
 body {
-    height: 100vh;
-    background: linear-gradient(130deg, #0082e6, #1d2a5a);
+  height: 100vh;
+  background: linear-gradient(130deg, #0082e6, #1d2a5a);
 }
 .container {
-    max-width: 700px;
-    width: 100%;
-    background-color: #fff;
-    padding: 25px 30px;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    margin-top: 50px;
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 50px;
 }
-input{
-    height: 45px;
-    width: 100%;
-    outline: none;
-    font-size: 16px;
-    border-radius: 5px;
-    padding-left: 15px;
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
+input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
