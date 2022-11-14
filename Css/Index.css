@@ -258,20 +258,16 @@ header.special .icon:before {
 }
 
 @media screen and (max-width: 736px) {
- 
   .row > .col-12-narrower {
     width: 100%;
     margin: 0;
   }
 }
 @media screen and (min-width: 1500px) {
- 
   .row > * {
     padding: 50px 0 0 50px;
   }
 }
-
-
 
 *,
 *:before,
@@ -289,7 +285,7 @@ header.special .icon:before {
   display: grid;
   width: auto;
 }
-.icono{
+.icono {
   font-size: 90px;
 }
 @media (min-width: 800px) {
