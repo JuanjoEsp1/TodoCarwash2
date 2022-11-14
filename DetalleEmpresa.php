@@ -70,8 +70,8 @@ include("Funciones/db.php");
     <div class="dmap">
         <div id="map" class="map"></div>
     </div>
+    <hr>
     <article class="detail-content">
-        <hr>
         <div class="detail">
             <p class="Direccion"><label>Direccion: </label><?php echo $row["direccion"]; ?></p>
             <p class="comuna"><label>Comuna: </label><?php echo $row["comuna"]; ?></p>
