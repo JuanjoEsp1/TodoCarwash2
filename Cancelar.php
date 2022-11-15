@@ -7,24 +7,24 @@
       echo 'Usted no tiene autorizacion';
       die();
   }
-    // conexion Base de datos
+    // Conexion Base de datos
     include("Funciones/db.php");
   
-    // Check if id is set or not, if true,
-    // toggle else simply go back to the page
+    // Comprueba si el id está establecido o no, si es verdadero,
+    // si no, simplemente vuelve a la página
     if (isset($_GET['id'])){
   
-        // Store the value from get to 
-        // a local variable "course_id"
+        // Almacenar el valor de get a 
+        // una variable local "id"
         $idAgendamiento=$_GET['id'];
   
-        // SQL query that sets the status to
-        // 0 to indicate deactivation.
+        // Consulta SQL que establece el estado a
+        // 0 para indicar la desactivación.
         $sql="UPDATE agendamiento SET estado = 'cancelada' WHERE idAGENDAMIENTO='$idAgendamiento'";
   
-        // Execute the query
+        // Ejecutar la consulta
         mysqli_query($conexion,$sql);
     }
   
-    // Go back to course-page.php
+    // Vuelve a la página del curso.php
     header('location: Perfil.php');
