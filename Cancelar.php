@@ -7,7 +7,7 @@
       echo 'Usted no tiene autorizacion';
       die();
   }
-    // Connect to database 
+    // conexion Base de datos
     include("Funciones/db.php");
   
     // Check if id is set or not, if true,
