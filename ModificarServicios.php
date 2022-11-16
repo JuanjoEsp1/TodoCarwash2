@@ -1,4 +1,8 @@
-<?php include("Funciones/db.php");
+<?php 
+// Conexion base de datos
+include("Funciones/db.php");
+
+//Validar inicio de sesion
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['correo_empresa'];
@@ -47,13 +51,17 @@ $idEmpresa = $row['idEmpresa'];
                 <article class="table-responsive">
 
                     <?php
+			//Condicion para borrar un servicio
                     if (isset($_GET['aksi']) == 'delete') {
-
+			//Obtener id del servicio
                         $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
+			//Obtener datos del servicio
                         $cek = mysqli_query($conexion, "SELECT * FROM servicio WHERE EMPRESA_idEmpresa ='$idEmpresa'");
+			//Condicion por si no hay datos
                         if (mysqli_num_rows($cek) == 0) {
                             echo '<nav class="alert alert-info alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> No se encontraron datos.</nav>';
-                        } else {
+                       	//Eliminar servicio
+			} else {
                             $delete = mysqli_query($conexion, "DELETE FROM servicio WHERE idSERVICIO ='$nik'");
                             if ($delete) {
                                 echo '<nav class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Datos eliminado correctamente.</nav>';
@@ -63,6 +71,7 @@ $idEmpresa = $row['idEmpresa'];
                         }
                     }
                     ?>
+		<!-- tabla donde se muestran los servicios -->
                     <table class="table table-striped table-hover" aria-describedby="servicios">
                         <tr>
                             <th>ID</th>
@@ -72,10 +81,13 @@ $idEmpresa = $row['idEmpresa'];
                             <th>ACCIONES</th>
                         </tr>
                         <?php
+	                // Consulta para obtener datos de los servicios
                         $sql = mysqli_query($conexion, "SELECT * FROM servicio WHERE EMPRESA_idEmpresa ='$idEmpresa'");
+			//Condicion por si no hay datos
                         if (mysqli_num_rows($sql) == 0) {
                             echo '<tr><td colspan="8">No hay datos.</td></tr>';
                         } else {
+			    // Recorrido de los datos
                             while ($row = mysqli_fetch_assoc($sql)) {
                                 echo '
 						<tr>
