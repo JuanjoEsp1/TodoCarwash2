@@ -48,7 +48,7 @@ include("funciones.php")
     }
   }
   ?>
-  //Banner
+  <!--Banner -->
   <div id="slider">
     <figure>
       <img src="/IMG/wp001.jpg">
