@@ -1,4 +1,8 @@
-<?php include("Funciones/db.php");
+<?php 
+// Conexion base de datos
+include("Funciones/db.php");
+
+//Validar inicio de sesion
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['correo_empresa'];
@@ -35,7 +39,7 @@ $idEmpresa = $row['idEmpresa'];
 <body>
 
     <?php
-
+// Consulta para obtener horas de la empresa
     $sql2 = mysqli_query($conexion, "SELECT DISTINCT fecha FROM horas WHERE EMPRESA_idEmpresa ='$idEmpresa' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
     $resultado2 = ($sql2);
 
@@ -76,16 +80,18 @@ $idEmpresa = $row['idEmpresa'];
                         </tr>
                         <?php
                         $FechaActual = date('d-m-Y');
+			    //Consulta para obtener los datos de las horas
                         $sql = mysqli_query($conexion, "SELECT * FROM horas WHERE EMPRESA_idEmpresa ='$idEmpresa' AND disponible = 'si' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora ");
 
                         if (isset($_POST['buscar'])) {
-
+			    // Consulta para obtener horas por fecha	
                             $buscarFecha = strval($_POST['search']);
                             $sql = mysqli_query($conexion, "SELECT * FROM horas WHERE fecha = '$buscarFecha' AND EMPRESA_idEmpresa ='$idEmpresa' AND disponible = 'si' ORDER BY fecha, hora ");
                         }
                         if (mysqli_num_rows($sql) == 0) {
                             echo '<tr><td colspan="8">No hay datos.</td></tr>';
                         } else {
+				//Muestra de los datos de las horas
                             while ($row = mysqli_fetch_assoc($sql)) {
 
                                 echo '
