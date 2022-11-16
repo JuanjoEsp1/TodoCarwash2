@@ -50,7 +50,7 @@ $idEmpresa = $row['idEmpresa'];
         <h1>Historial de Agenda</h1>
         <hr>
         <article class="table-responsive">
-		// Buscador por fecha
+		<!--Buscador por fecha -->
             <form name="BuscarFecha" action="Historial.php" method="POST">
                 Fecha:
                 <select name="search">
@@ -66,7 +66,7 @@ $idEmpresa = $row['idEmpresa'];
             </form>
             
             <br><br>
-		// Tabla con resultados de las horas agendadas
+		<!--Tabla con resultados de las horas agendadas -->
             <table class="table table-striped table-hover" aria-describedby="Agenda">
                 <tr>
                     <th>Nombre</th>
