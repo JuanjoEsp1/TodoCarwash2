@@ -62,7 +62,7 @@ include("Funciones/db.php");
                     echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Los datos han sido guardados con éxito.</div>';
                 }
                 ?>
-                // Formulario para editar el servicio
+                <!--Formulario para editar el servicio-->
                 <form class="form-horizontal" action="" method="post">
                     <article class="form-group">
                         <label class="col-sm-3 control-label">Código</label>
