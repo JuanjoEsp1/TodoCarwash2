@@ -1,5 +1,7 @@
 <?php
+//Conexion base de datos
 include("Funciones/db.php");
+//Validar inicio de sesion
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['correo_empresa'];
@@ -35,7 +37,7 @@ $idEmpresa = $row['idEmpresa'];
 
 <body>
 
-    <!-- modal nuevo horario -->
+    <!--Formulario de horario-->
     <div class="container">
         <div class="modal-body">
             <h1>Registrar Horario</h1>
@@ -43,21 +45,9 @@ $idEmpresa = $row['idEmpresa'];
             <form id="horariofrm" method="post" action="/Process.php">
                 <input type="text" name="idEmpresa" value="<?php echo $row['idEmpresa']; ?>" readonly hidden required>
 
-                <!-- <label>Dias:</label>
-                <div id="days-list" class="col-sm-12">
-                    <a data-day="1" class="day-option">Lunes</a>
-                    <a data-day="2" class="day-option">Martes</a>
-                    <a data-day="3" class="day-option">Miercoles</a>
-                    <a data-day="4" class="day-option">Jueves</a>
-                    <a data-day="5" class="day-option">Viernes</a>
-                    <a data-day="6" class="day-option">Sabado</a>
-                    <a data-day="7" class="day-option">Domingo</a>
-                </div>
-                <input id="days-chose" class="form-control" type="text" name="days"> -->
-
                 <label for="">Fecha Inicio</label>
                 <input type="date" name="fechaIn" class="form-control" placeholder="Ingrese Fecha" required>
-                <label for="">Fecha Fin</label>
+                <label for="">Fecha Final</label>
                 <input type="date" name="fechaFin" class="form-control" placeholder="Ingrese Fecha" required>
                 <label>Hora de Inicio:</label>
                 <input class="form-control" type="text" id="time1" name="tiempo1" required>
@@ -67,7 +57,9 @@ $idEmpresa = $row['idEmpresa'];
                 <select class="form-control" name="minutos" required>
                     <option></option>
                     <option value="30">30 Minutos</option>
-                    <option value="60">1 Hora</option>
+                    <option value="60">60 Minutos</option>
+                    <option value="90">90 Minutos</option>
+                    <option value="120">120 Minutos</option>
                 </select>
                 <div class="modal-footer">
                     <button type="submit" value="crear" class="btn btn-success">Crear</button>
