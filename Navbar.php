@@ -1,4 +1,6 @@
-<?php include("Login2.php")
+<?php 
+//llamar a iniciar sesion
+include("Login2.php")
 ?>
 <!DOCTYPE html>
 <html lang="es">

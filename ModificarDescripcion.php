@@ -1,4 +1,7 @@
-<?php include("Funciones/db.php");
+<?php 
+// Conexion base de datos
+include("Funciones/db.php");
+//Validar que la sesion ha sido iniciada
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['correo_empresa'];
@@ -49,9 +52,11 @@ $correo = $_SESSION['correo_empresa'];
                     }
                 }
                 ?>
+                <!-- Formulario para modificar la descripcion -->
+                
                 <form action="../Funciones/DescripcionFunc.php" method="POST" enctype="multipart/form-data" class="form">
                     <?php
-
+                    // Consulta para obtener datos de la empresa
                     $sql = "SELECT * FROM empresa WHERE correo_empresa ='$correo'";
 
                     $gotResuslts = mysqli_query($conexion, $sql);
@@ -59,7 +64,6 @@ $correo = $_SESSION['correo_empresa'];
                     if ($gotResuslts) {
                         if (mysqli_num_rows($gotResuslts) > 0) {
                             while ($row = mysqli_fetch_array($gotResuslts)) {
-                                //print_r($row['nombre_empresa']);
                     ?>
                                 <div class="form-group">
                                     <textarea name="descripcion" class="form-control" rows="5"><?php echo $row['descripcion']; ?></textarea>

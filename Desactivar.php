@@ -1,24 +1,24 @@
 <?php
   
-    // Connect to database 
+    // Conectar con la base de datos 
     include("Funciones/db.php");
   
-    // Check if id is set or not, if true,
-    // toggle else simply go back to the page
+    // Comprueba si el id está establecido o no, si es cierto,
+    // cambia, si no, simplemente vuelve a la página
     if (isset($_GET['id'])){
   
-        // Store the value from get to 
-        // a local variable "course_id"
+        // Almacenar el valor de get a 
+        // una variable local "id"
         $hora_id=$_GET['id'];
   
-        // SQL query that sets the status to
-        // 0 to indicate deactivation.
+        // Consulta SQL que establece el estado a
+        // 0 para indicar la desactivación.
         $sql="UPDATE horas SET disponible = 'no' WHERE idHORAS='$hora_id'";
   
-        // Execute the query
+        // Ejecutar la consulta
         mysqli_query($conexion,$sql);
     }
   
-    // Go back to course-page.php
+    // Volver a la pagina de ModificarHoras.php
     header('location: ModificarHoras.php');
 ?>

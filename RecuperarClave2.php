@@ -16,6 +16,8 @@ $correo = $_POST['correo_empresa'];
 </head>
 
 <body>
+    
+    <!-- Formulario para recuperar contrasena -->
 
     <form action="../Funciones/RecuperarClaveFunc.php" method="POST" enctype="multipart/form-data">
         <?php

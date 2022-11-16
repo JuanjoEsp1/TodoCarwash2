@@ -1,6 +1,9 @@
 <?php
+// Zona horaria de Santiago de chile
 date_default_timezone_set("America/Santiago");
+// Conexion base de datos
 include("Funciones/db.php");
+//Validador de inicio de sesion
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['correo_empresa'];
@@ -34,7 +37,7 @@ $idEmpresa = $row['idEmpresa'];
 
 <body>
     <?php
-
+	// Consulta para obtener fecha de las horas agendadas
     $sql2 = mysqli_query($conexion, "SELECT DISTINCT fecha FROM horas
             INNER JOIN agendamiento ON agendamiento.HORAS_idHORAS = horas.idHORAS
             WHERE agendamiento.EMPRESA_idEmpresa = '$idEmpresa' AND fecha < (Now() - INTERVAL 1 DAY) ORDER BY fecha");
@@ -47,6 +50,7 @@ $idEmpresa = $row['idEmpresa'];
         <h1>Historial de Agenda</h1>
         <hr>
         <article class="table-responsive">
+		<!--Buscador por fecha -->
             <form name="BuscarFecha" action="Historial.php" method="POST">
                 Fecha:
                 <select name="search">
@@ -62,6 +66,7 @@ $idEmpresa = $row['idEmpresa'];
             </form>
             
             <br><br>
+		<!--Tabla con resultados de las horas agendadas -->
             <table class="table table-striped table-hover" aria-describedby="Agenda">
                 <tr>
                     <th>Nombre</th>
@@ -73,14 +78,14 @@ $idEmpresa = $row['idEmpresa'];
                     <th>Hora</th>
                 </tr>
                 <?php
-
+		// Consulta para obtener datos de las horas agendadas
                 $sql = mysqli_query($conexion, "SELECT * FROM agendamiento 
                 INNER JOIN horas ON agendamiento.HORAS_idHORAS = horas.idHORAS 
                 INNER JOIN servicio ON agendamiento.SERVICIO_idSERVICIO = servicio.idSERVICIO 
                 WHERE agendamiento.EMPRESA_idEmpresa = '$idEmpresa' AND fecha < (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
 
                 if (isset($_POST['buscar'])) {
-
+		// Consulta para obtener las horas agendadas segun fecha seleccionada
                     $buscarFecha = strval($_POST['search']);
                     $sql = mysqli_query($conexion, "SELECT * FROM agendamiento
                     RIGHT JOIN horas ON agendamiento.HORAS_idHORAS = horas.idHORAS 
@@ -90,6 +95,7 @@ $idEmpresa = $row['idEmpresa'];
                 if (mysqli_num_rows($sql) == 0) {
                     echo '<tr><td colspan="8">No hay datos.</td></tr>';
                 } else {
+			//Condicion para mostrar los datos de las horas agendadas
                     while ($row = mysqli_fetch_assoc($sql)) {
                         echo '
 						<tr>
