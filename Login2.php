@@ -41,10 +41,10 @@
 </body>
 
 <script>
-    // Get the modal
+    // Obtener el modal
     var modal = document.getElementById('id01');
 
-    // When the user clicks anywhere outside of the modal, close it
+    // Cuando el usuario haga clic en cualquier lugar fuera del modal, se cierra
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
