@@ -71,13 +71,13 @@ include("Funciones/db.php");
 
     <?php }
             } ?>
-    //Mapa donde se ubica la empresa
+    <!--Mapa donde se ubica la empresa -->
     <div class="dmap">
         <div id="map" class="map"></div>
     </div>
             
     <hr>
-    // Informacion de la empresa
+    <!-- Informacion de la empresa -->
     <article class="detail-content">
         <div class="detail">
             <p class="Direccion"><label>Direccion: </label><?php echo $row["direccion"]; ?></p>
@@ -90,7 +90,7 @@ include("Funciones/db.php");
             </div>
         </div>
     </article>
-    // Valoracion de la empresa
+    <!--Valoracion de la empresa -->
     <div class="valoracion">
         <form action="./valoracion.php" method="POST">
             <input type="text" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly>
@@ -179,7 +179,7 @@ include("Funciones/db.php");
 
             ?>
     
-            // Modal de agendamiento
+            <!-- Modal de agendamiento -->
             <div id="id02" class="container">
                 <div class="title">Agendar</div>
                 <div class="content">
@@ -256,10 +256,10 @@ include("Funciones/db.php");
         }
     }
 </script>
-// Validador de RUT
+<!-- Validador de RUT -->
 <script src="/js/validarRUT.js"></script>
     
-// Manejo de fotos
+<!-- Manejo de imagenes -->
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);
