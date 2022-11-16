@@ -1,5 +1,7 @@
 <?php
+//Conexion base de datos
 include("Funciones/db.php");
+//Validar inicio de sesion
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['correo_empresa'];
@@ -25,7 +27,6 @@ $idEmpresa = $row['idEmpresa'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Perfil</title>
 
@@ -65,7 +66,7 @@ $idEmpresa = $row['idEmpresa'];
                 <a href="javascript:void(0)" class="add-more-form float-end btn btn-primary">Agregar mas Servicios</a>
             </div>
             <div class="card-body">
-
+                <!-- Formulario de registro de servicios -->
                 <form action="IngresarServicios.php" method="POST">
 
                     <input type="text" name="idEmpresa" value="<?php echo $row['idEmpresa']; ?>" readonly hidden required>
@@ -104,7 +105,8 @@ $idEmpresa = $row['idEmpresa'];
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-
+    
+<!-- Ingresar multiples Servicios -->
     <script>
         $(document).ready(function() {
 
