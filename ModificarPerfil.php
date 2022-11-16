@@ -1,7 +1,8 @@
 <?php 
-//Conexion base de datos
+// Conexion base de datos
 include("Funciones/db.php");
-//Validad inicio de sesion
+
+//Validador inicio de sesion activa
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['correo_empresa'];
@@ -72,17 +73,18 @@ $correo = $_SESSION['correo_empresa'];
                     }
                 }
                 ?>
+                <!-- Formulario para modificar perfil -->
                 <form action="../Funciones/ProfileUpdateFunc.php" method="POST" enctype="multipart/form-data" class="form">
                     <?php
-                    // Consulta obtener datos de la empresa
+
                     $sql = "SELECT * FROM empresa WHERE correo_empresa ='$correo'";
-                    // Ejecutar consulta
+
                     $gotResuslts = mysqli_query($conexion, $sql);
 
                     if ($gotResuslts) {
                         if (mysqli_num_rows($gotResuslts) > 0) {
-                            // llamar y recorrer los datos encontrados
                             while ($row = mysqli_fetch_array($gotResuslts)) {
+                                //print_r($row['nombre_empresa']);
                     ?>
                                 <div class="form-group">
                                     <input type="text" name="nombreEmpresa" class="form-control" value="<?php echo $row['nombre_empresa']; ?>">
@@ -151,6 +153,7 @@ $correo = $_SESSION['correo_empresa'];
                                 <!--<div class="form-group">
                                     <input type="password" name="contrasenaEmpresa" class="form-control" value="<?php echo $row['contrasena']; ?>">
                                 </div> -->
+
                                 <br>
                                 <div class="form-group">
                                     <input type="submit" name="actualizar" class="btn btn-success" value="Actualizar Datos">
