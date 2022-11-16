@@ -1,13 +1,13 @@
 <?php
+// Conexion Base de datos
 include("Funciones/db.php");
 
+//Contador de visitas
 $date = date("Y-m-d");
-
 $userIP = $_SERVER['REMOTE_ADDR'];
-
 $updateQuery = "UPDATE `visitas` SET `ip`='$userIP', `visitas`=`visitas` +1 ,`date` ='$date'";
-
 mysqli_query($conexion, $updateQuery);
+
 include("funciones.php")
 ?>
 <!DOCTYPE html>
@@ -33,6 +33,7 @@ include("funciones.php")
 <body>
   <?php
   error_reporting(0);
+// Llamar a la barra de navegacion
   include("Navbar.php");
   ?>
 
@@ -47,6 +48,7 @@ include("funciones.php")
     }
   }
   ?>
+  //Banner
   <div id="slider">
     <figure>
       <img src="/IMG/wp001.jpg">
@@ -57,9 +59,10 @@ include("funciones.php")
     </figure>
   </div>
 
-   <!-- Mapa general -->
+   <!-- Mapa -->
    <div id="mapCanvas"></div>
-  <!-- The Band Section -->
+  
+  <!-- Sobre nosotros -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
     <h2 class="w3-wide">Sobre Nosotros</h2>
     <p class="w3-opacity"><i></i></p>
@@ -126,16 +129,17 @@ include("funciones.php")
   <div>
     
   </div>
-
+  <!-- Llamar al pie de pagina -->
+  
   <?php include("footer.php"); ?>
 </body>
 <?php
-
+    // Codigo para el mapa
    
-    // Fetch the marker info from the database 
+    // Obtener la información del marcador de la base de datos 
     $result = $conexion->query("SELECT * FROM empresa");
 
-    // Fetch the info-window data from the database 
+    // Obtener los datos de la ventana de información de la base de datos 
     $result2 = $conexion->query("SELECT * FROM empresa");
     ?>
     <script>
@@ -146,11 +150,11 @@ include("funciones.php")
                 mapTypeId: 'roadmap'
             };
 
-            // Display a map on the web page
+            // Mostrar el mapa en la pagina
             map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
             map.setTilt(100);
 
-            // Multiple markers location, latitude, and longitude
+            // Multiples marcadores de ubicacion, latitud, longitud
             var icon_ = "https://cdn2.iconfinder.com/data/icons/font-awesome/1792/map-marker-32.png";
 
             var markers = [
@@ -168,7 +172,7 @@ include("funciones.php")
                 ?>
             ];
 
-            // Info window content
+            // Ventana de informacion
             var infoWindowContent = [
                 <?php if ($result2->num_rows > 0) {
                     while ($row = $result2->fetch_assoc()) { ?>
@@ -182,11 +186,11 @@ include("funciones.php")
                 ?>
             ];
 
-            // Add multiple markers to map
+            // Añadir varios marcadores al mapa
             var infoWindow = new google.maps.InfoWindow(),
                 marker, i;
 
-            // Place each marker on the map  
+            // Coloca cada marcador en el mapa  
             for (i = 0; i < markers.length; i++) {
                 var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
                 bounds.extend(position);
@@ -197,7 +201,7 @@ include("funciones.php")
                     title: markers[i][0]
                 });
 
-                // Add info window to marker    
+                // Añadir ventana de información al marcador    
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
                         infoWindow.setContent(infoWindowContent[i][0]);
@@ -205,18 +209,18 @@ include("funciones.php")
                     }
                 })(marker, i));
 
-                // Center the map to fit all markers on the screen
+                // Centrar el mapa para que quepan todos los marcadores en la pantalla
                 map.fitBounds(bounds);
             }
 
-            // Set zoom level
+            // Establecer el nivel de zoom
             var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
                 this.setZoom(10);
                 google.maps.event.removeListener(boundsListener);
             });
         }
 
-        // Load initialize function
+        // Cargar la función de inicialización
         google.maps.event.addDomListener(window, 'load', initMap);
     </script>
 </html>
