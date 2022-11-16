@@ -1,7 +1,8 @@
 <?php
+//Conexion Base de datos
 include("Funciones/db.php");
+//Llamar a la barra de navegacion
 include("Navbar.php");
-include("Login2.php");
 ?>
 
 <!DOCTYPE html>
@@ -18,12 +19,12 @@ include("Login2.php");
 
 <body>
     <?php
-
+    //Consulta para obtener las comunas
     $sql2 = mysqli_query($conexion, "SELECT DISTINCT comuna FROM empresa");
 
     ?>
     <h2>Lista de Empresas</h2>
-
+    <!-- Buscador de comunas-->
     <form name="Buscarcomuna" action="MostrarEmpresas2.php" method="POST" class="formB">
         <label>Comuna</label>
         <select name="search">
@@ -39,25 +40,27 @@ include("Login2.php");
 
     <?php
     if (isset($_GET['aksi'])) {
-
+        // Obtener id de la empresa
         $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
+        //Consulta para obtener datos de la empresa
         $cek = mysqli_query($conexion, "SELECT * FROM empresa WHERE idEmpresa='$nik'");
     }
     ?>
 
     <main>
         <?php
-
+        //Consulta obtener datos de la empresa
         $sql = mysqli_query($conexion, "SELECT * FROM empresa idEmpresa");
 
         if (isset($_POST['buscar'])) {
-
+            //Consulta buscar por comuna
             $buscarComuna = strval($_POST['search']);
             $sql = mysqli_query($conexion, "SELECT * FROM empresa WHERE comuna = '$buscarComuna' ");
         }
         if (mysqli_num_rows($sql) == 0) {
             echo '<tr><td colspan="8">No hay datos.</td></tr>';
         } else {
+            // Recorrido para obtener los datos
             while ($row = mysqli_fetch_assoc($sql)) {
 
         ?>
@@ -76,6 +79,7 @@ include("Login2.php");
                     </a>
                 </div>
                 
+                <!-- Diseno de burbujas -->
                 <header>
                     <div class="burbujas">
                         <div class="burbuja"></div>
