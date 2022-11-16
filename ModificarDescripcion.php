@@ -52,7 +52,7 @@ $correo = $_SESSION['correo_empresa'];
                     }
                 }
                 ?>
-                // Formulario para modificar la descripcion
+                <!-- Formulario para modificar la descripcion -->
                 
                 <form action="../Funciones/DescripcionFunc.php" method="POST" enctype="multipart/form-data" class="form">
                     <?php
@@ -64,7 +64,6 @@ $correo = $_SESSION['correo_empresa'];
                     if ($gotResuslts) {
                         if (mysqli_num_rows($gotResuslts) > 0) {
                             while ($row = mysqli_fetch_array($gotResuslts)) {
-                                //print_r($row['nombre_empresa']);
                     ?>
                                 <div class="form-group">
                                     <textarea name="descripcion" class="form-control" rows="5"><?php echo $row['descripcion']; ?></textarea>
