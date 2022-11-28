@@ -215,12 +215,9 @@ img {
 }
 
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 500px;
   position: relative;
-
-  width: 500px;
-  float: left;
-  margin-right: 20px;
+  
   box-shadow: 5px 5px 7px 0px #1d2a5a;
 }
 

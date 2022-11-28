@@ -1,0 +1,471 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+  width: 500px;
+  height: 400px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  box-shadow: 5px 5px 7px 0px #1d2a5a;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: #000000;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mapa */
+.map {
+  height: 350px;
+  width: 350px;
+  border-radius: 10px;
+  border: 2px solid #1d2a5a;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.dmap {
+  /*padding: 50px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* Mapa */
+
+/* detalle 1 */
+.detail-content {
+  display: flex;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+label {
+  font-weight: 600;
+}
+
+.descripcion {
+  width: 500px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.btnregresar {
+  float: right;
+  width: auto;
+  padding: 10px 18px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: red;
+}
+
+.btnregresar:hover {
+  opacity: 0.5;
+}
+
+.btnagendar {
+  float: left;
+  width: auto;
+  padding: 10px 18px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #0082e6, #1d2a5a);
+}
+.btnagendar:hover {
+  background: linear-gradient(-135deg, #0082e6, #1d2a5a);
+  opacity: 0.7;
+}
+
+/* Servicios */
+h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.detail-servicios {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.hideText {
+  display: none;
+}
+
+.showText {
+  display: block;
+}
+
+/* Valoracion */
+.valoracion {
+  max-width: 500px;
+  margin: 0 auto;
+  height: 50px;
+  margin-bottom: 120px;
+}
+
+.valoracion p,
+input {
+  text-align: center;
+}
+.valoracion label {
+  font-size: 40px;
+  color: grey;
+}
+input[type="radio"] {
+  display: none;
+}
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.valoracion label:hover,
+label:hover ~ label {
+  color: orange;
+}
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+.mail{
+  text-align: center;
+}
+
+.inputmail{
+  width: auto;
+  padding: 12px 20px;
+  /* margin: 8px 0; */
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btnvalorar{
+  width: auto;
+  padding: 10px 18px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #0082e6;
+}
+
+/* Valoracion */
+
+
+/* comentarios */
+
+.comentarios {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+.textComentario {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btnComentar{
+  width: auto;
+    padding: 10px 18px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background:#0082e6;
+}
+.btnComentar:hover{
+  opacity: 0.9;
+}
+
+
+/* Modal */
+
+.cancelbtn {
+  float: right;
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.cancelbtn:hover {
+  opacity: 0.8;
+}
+.agendarbtn {
+  float: left;
+  width: auto;
+  padding: 10px 18px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #0082e6, #1d2a5a);
+}
+
+.agendarbtn:hover {
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #0082e6, #1d2a5a);
+}
+
+.modalAgendar {
+  left: 50%;
+  top: 50%;
+  position: fixed;
+  display: none;
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 50px;
+  overflow: auto;
+  transform: translate(-50%, -50%);
+}
+
+.modalAgendar .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.modalAgendar .title::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #0082e6, #1d2a5a);
+}
+
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .user-details .select-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+form .select-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input,
+select {
+  height: 45px;
+  width: 85%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box .code {
+  width: 15%;
+}
+.user-details .input-box .tel {
+  width: 63%;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #0082e6;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn {
+    width: 100%;
+  }
+}
+@media (max-width: 584px) {
+  .modalAgendar {
+    max-width: 100%;
+  }
+
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .category {
+    width: 100%;
+  }
+
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+@media (max-width: 459px) {
+  .modalAgendar .content .category {
+    flex-direction: column;
+  }
+}
+
+/* Modal */

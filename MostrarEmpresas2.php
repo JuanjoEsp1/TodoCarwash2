@@ -71,7 +71,7 @@ include("Login2.php");
                         <p class="Direccion"><?php echo $row["direccion"]; ?></p>
                     </div>
 
-                    <a href="DetalleEmpresa.php?nik=<?php echo $row['idEmpresa']; ?>">
+                    <a href="DetalleEmpresa2.php?nik=<?php echo $row['idEmpresa']; ?>">
                         <button class="button-18">Visitar</button>
                     </a>
                 </div>

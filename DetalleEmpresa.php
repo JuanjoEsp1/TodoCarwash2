@@ -21,7 +21,9 @@ include("Funciones/db.php");
 </head>
 
 <body>
-
+<?php
+  include("Navbar.php");
+  ?>
 
     <?php
     $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
@@ -44,7 +46,6 @@ include("Funciones/db.php");
             <hr />
 
 
-            <div class="slideshow-container">
                 <?php
                 $query = "SELECT * FROM images WHERE EMPRESA_idEmpresa ='$nik' ORDER BY id_imagen ASC";
                 $run = $conexion->query($query);
@@ -60,10 +61,7 @@ include("Funciones/db.php");
                             <a class="prev" onclick="plusSlides(-1)">❮</a>
                             <a class="next" onclick="plusSlides(1)">❯</a>
                         </div>
-
                     </div>
-            </div>
-
     <?php }
             } ?>
 
@@ -71,7 +69,7 @@ include("Funciones/db.php");
         <div id="map" class="map"></div>
     </div>
     <hr>
-    <article class="detail-content">
+    <div class="detail-content">
         <div class="detail">
             <p class="Direccion"><label>Direccion: </label><?php echo $row["direccion"]; ?></p>
             <p class="comuna"><label>Comuna: </label><?php echo $row["comuna"]; ?></p>
@@ -82,10 +80,10 @@ include("Funciones/db.php");
                 <button type="button" class="btnagendar" onclick="document.getElementById('id02').style.display='block'">Agendar</button>
             </div>
         </div>
-    </article>
+        </div>
     <div class="valoracion">
         <form action="./valoracion.php" method="POST">
-            <input type="text" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly>
+            <input type="hidden" name="idEmpresa" value="<?php echo $nik ?>" readonly>
             <p class="clasificacion">
                 <input id="radio1" type="radio" name="estrellas" value="5">
                 <label for="radio1">★</label>
@@ -178,7 +176,7 @@ include("Funciones/db.php");
                 <div class="title">Agendar</div>
                 <div class="content">
                     <form class="modal-content animate" action="./Funciones/Agendar.php" method="post">
-                        <input type="text" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly>
+                        <input type="hidden" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly>
 
                         <div class="user-details">
                             <div class="input-box">
