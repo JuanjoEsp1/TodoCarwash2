@@ -1,4 +1,5 @@
 <?php
+// Conexion a la base de datos
 include("Funciones/db.php");
 
 ?>
@@ -26,12 +27,16 @@ include("Funciones/db.php");
   ?>
 
     <?php
+    // Consulta para obtener el id de la empresa
     $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
-
+    
+    // Actualizador de visitas de la empresa
     $updateQuery = "UPDATE `empresa` SET `visitas`=`visitas` +1 WHERE idEmpresa = '$nik'";
-
+    
+    // Ejecutar la consulta
     mysqli_query($conexion, $updateQuery);
 
+    // Consulta de toda la informacion de la empresa con su "id"
     $sql = mysqli_query($conexion, "SELECT * FROM empresa WHERE idEmpresa='$nik'");
 
     if (mysqli_num_rows($sql) == 0) {
@@ -64,11 +69,14 @@ include("Funciones/db.php");
                     </div>
     <?php }
             } ?>
-
+    <!--Mapa donde se ubica la empresa -->
     <div class="dmap">
         <div id="map" class="map"></div>
     </div>
+            
     <hr>
+    <!-- Informacion de la empresa -->
+    <article class="detail-content">
     <div class="detail-content">
         <div class="detail">
             <p class="Direccion"><label>Direccion: </label><?php echo $row["direccion"]; ?></p>
@@ -80,7 +88,7 @@ include("Funciones/db.php");
                 <button type="button" class="btnagendar" onclick="document.getElementById('id02').style.display='block'">Agendar</button>
             </div>
         </div>
-        </div>
+    </article>
     <div class="valoracion">
         <form action="./valoracion.php" method="POST">
             <input type="hidden" name="idEmpresa" value="<?php echo $nik ?>" readonly>
@@ -118,10 +126,6 @@ include("Funciones/db.php");
                 var markers = [];
                 var icon_ = "https://cdn2.iconfinder.com/data/icons/font-awesome/1792/map-marker-32.png";
 
-                // con código PHP lo puedes agregar directamente 
-                // en él codigo los estilos y etiquetas 
-                // que vayas a necesitar
-                //puedes agregar todo el contenido que necesites
                 var locations = [
                     [
                         '<p class="strong"><?php echo $rowmap["nombre_empresa"]; ?></p>',
@@ -165,13 +169,15 @@ include("Funciones/db.php");
             <!---------------------------------------------------------------->
 
             <?php
-
+            // Consulta de servicios de la empresa
             $sql2 = mysqli_query($conexion, "SELECT idSERVICIO, nombre_servicio,precio_servicio FROM servicio WHERE EMPRESA_idEmpresa='$nik'");
-
+               
+            // Consulta de horas de la empresa
             $sql3 = mysqli_query($conexion, "SELECT idHORAS, fecha, hora FROM horas WHERE EMPRESA_idEmpresa='$nik' AND disponible = 'si' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
 
             ?>
-
+    
+            <!-- Modal de agendamiento -->
             <div id="id02" class="container">
                 <div class="title">Agendar</div>
                 <div class="content">
@@ -238,17 +244,20 @@ include("Funciones/db.php");
 </body>
 
 <script>
-    // Get the modal
+    // Obtener el modal
     var modal = document.getElementById('id02');
 
-    // When the user clicks anywhere outside of the modal, close it
+    // Cuando el usuario haga clic en cualquier lugar fuera del modal, se cierra
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 </script>
+<!-- Validador de RUT -->
 <script src="/js/validarRUT.js"></script>
+    
+<!-- Manejo de imagenes -->
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);

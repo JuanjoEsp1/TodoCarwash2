@@ -1,4 +1,5 @@
 <?php
+// Conexion Base de datos
 include("Funciones/db.php");
 ?>
 <!DOCTYPE html>
@@ -8,8 +9,8 @@ include("Funciones/db.php");
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Datos de empleados</title>
-
         <link href="Css/bootstrap.min.css" rel="stylesheet">
+        
         <style>
             .content {
                 margin-top: 80px;
@@ -21,26 +22,31 @@ include("Funciones/db.php");
         </style>
     </head>
     <body>
+        
         <section class="container">
             <article class="content">
                 <h2>Datos del Servicio &raquo; Editar datos</h2>
                 <hr />
 
                 <?php
-                
+                // Consulta para obtener el id del servicio
                 $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
+                 // Consulta de toda la informacion del servicio con su "id"
                 $sql = mysqli_query($conexion, "SELECT * FROM servicio WHERE idSERVICIO='$nik'");
+                
                 if (mysqli_num_rows($sql) == 0) {
                     header("Location: perfil.php");
                 } else {
                     $row = mysqli_fetch_assoc($sql);
                 }
                 if (isset($_POST['save'])) {
+                    // Obtener los datos de los servicios
                     $codigo = mysqli_real_escape_string($conexion, (strip_tags($_POST["codigo"], ENT_QUOTES))); 
                     $nombre = mysqli_real_escape_string($conexion, (strip_tags($_POST["nombre"], ENT_QUOTES))); 
                     $precio = mysqli_real_escape_string($conexion, (strip_tags($_POST["precio"], ENT_QUOTES)));
                     $descripcion = mysqli_real_escape_string($conexion, (strip_tags($_POST["descripcion"], ENT_QUOTES)));
-
+                    
+                    // Actualizacion de datos del servicio
                     $update = mysqli_query($conexion, "UPDATE servicio SET nombre_servicio='$nombre', precio_servicio='$precio', descripcion = '$descripcion' WHERE idSERVICIO='$nik'") 
 
                     or die('error');
@@ -56,6 +62,7 @@ include("Funciones/db.php");
                     echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Los datos han sido guardados con éxito.</div>';
                 }
                 ?>
+                <!--Formulario para editar el servicio-->
                 <form class="form-horizontal" action="" method="post">
                     <article class="form-group">
                         <label class="col-sm-3 control-label">Código</label>

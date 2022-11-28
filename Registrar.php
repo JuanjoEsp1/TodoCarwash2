@@ -1,4 +1,5 @@
 <?php
+//Barra de navegacion
 include("Navbar.php");
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ include("Navbar.php");
 
 <body>
 
-
+    <!-- Formulario de Registro -->
     <div class="container">
         <div class="title">Registro de Empresas</div>
         <div class="content">
@@ -111,9 +112,12 @@ include("Navbar.php");
     </div>
 
 </body>
+<!-- Validador de RUT -->
 <script src="/js/validarRUT.js"></script>
+<!-- API Google Maps -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCOQLs9I66NNweqKrNCiYxizbwfCcOrQxI&libraries=places"></script>
  
+<!-- Obtener Direccion -->
 <script>
 
 var direccion = 'direccion';

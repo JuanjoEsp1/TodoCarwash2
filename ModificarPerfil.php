@@ -1,4 +1,8 @@
-<?php include("Funciones/db.php");
+<?php 
+// Conexion base de datos
+include("Funciones/db.php");
+
+//Validador inicio de sesion activa
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['correo_empresa'];
@@ -69,6 +73,7 @@ $correo = $_SESSION['correo_empresa'];
                     }
                 }
                 ?>
+                <!-- Formulario para modificar perfil -->
                 <form action="../Funciones/ProfileUpdateFunc.php" method="POST" enctype="multipart/form-data" class="form">
                     <?php
 
@@ -149,9 +154,6 @@ $correo = $_SESSION['correo_empresa'];
                                     <input type="password" name="contrasenaEmpresa" class="form-control" value="<?php echo $row['contrasena']; ?>">
                                 </div> -->
 
-                                <!--<div class="form-group">
-                                    <input type="file" name="userImage" class="form-control">
-                                </div> -->
                                 <br>
                                 <div class="form-group">
                                     <input type="submit" name="actualizar" class="btn btn-success" value="Actualizar Datos">
