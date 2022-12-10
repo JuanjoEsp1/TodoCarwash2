@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("America/Santiago");
 include("Funciones/db.php");
 
 ?>
@@ -14,7 +15,7 @@ include("Funciones/db.php");
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwPrp3BT2yJmxJQxIpIGNHn_p0hXxiTU8&sensor=false"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <title>Document</title>
+    <title>Detalle de empresa</title>
 </head>
 
 <body>
@@ -23,8 +24,20 @@ include("Funciones/db.php");
     ?>
 
     <?php
+    // Consulta para obtener el id de la empresa
     $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
 
+    
+    $date = date("Y-m-d");
+    $userIP = $_SERVER['REMOTE_ADDR'];
+
+    //insertar visitas
+    $insertQuery = "INSERT INTO visitas (idEmpresa, visitas, ip, fecha) VALUES ('$nik', '1', '$userIP', '$date') ";
+
+    // Ejecutar la consulta
+    mysqli_query($conexion, $insertQuery);
+
+    // Consulta de toda la informacion de la empresa con su "id"
     $sql = mysqli_query($conexion, "SELECT * FROM empresa WHERE idEmpresa='$nik'");
 
     if (mysqli_num_rows($sql) == 0) {
@@ -122,8 +135,8 @@ include("Funciones/db.php");
                     <label for="radio5">★</label>
                 </p>
                 <div class="mail">
-                <input class="inputmail" type="email" name="emailCliente" placeholder="correo@gmail.com" required>
-                <button type="submit" value="valorar" class="btnvalorar">Valorar</button>
+                    <input class="inputmail" type="email" name="emailCliente" placeholder="correo@gmail.com" required>
+                    <button type="submit" value="valorar" class="btnvalorar">Valorar</button>
                 </div>
             </form>
         </div>
@@ -132,133 +145,133 @@ include("Funciones/db.php");
 
         <!-- Comentario section-->
 
-<div class="comentarios">
-        <form method="POST" action="./enviarcomentario.php">
-            <input type="hidden" name="idEmpresa" value="<?php echo $nik ?>" readonly>
-            <section id="contact">
-                <div class="container px-4">
-                    <div class="row gx-4 justify-content-center">
-                        <div class="col-lg-8">
-                            <h2>Comentarios</h2>
-                            <br>
-
-                            <div class="col-xs-12">
-                                <h3>¡Haz un Comentario!</h3>
-
+        <div class="comentarios">
+            <form method="POST" action="./enviarcomentario.php">
+                <input type="hidden" name="idEmpresa" value="<?php echo $nik ?>" readonly>
+                <section id="contact">
+                    <div class="container px-4">
+                        <div class="row gx-4 justify-content-center">
+                            <div class="col-lg-8">
+                                <h2>Comentarios</h2>
                                 <br>
-                                <div class="form-group">
-                                    <label for="nombre" class="form-label">Nombre</label>
-                                    <input class="form-control" name="nombre" type="text" id="nombre" placeholder="Escribe tu nombre" required>
-                                </div>
 
-                                <br>
-                                <div class="form-group">
-                                    <label for="comentario" class="form-label">Comentario:</label>
-                                    <textarea class="textComentario" name="comentario" cols="30" rows="5" type="text" id="comentario" placeholder="Escribe tu comentario......"></textarea>
-                                </div>
-                                <br>
-                                <input class="btnComentar" type="submit" value="Enviar Comentario">
-                                <br>
-                                <br>
-                                <br>
-                                <?php
+                                <div class="col-xs-12">
+                                    <h3>¡Haz un Comentario!</h3>
 
-                                $resultado = mysqli_query($conexion, "SELECT * FROM comentarios WHERE idEmpresa = '$nik'");
-
-                                while ($comentario = mysqli_fetch_object($resultado)) {
-
-                                ?>
-
-                                    <b><?php echo ($comentario->nombre);  ?></b>(<?php echo ($comentario->fecha); ?>) dijo:
-                                    <br />
                                     <br>
-                                    <?php echo ($comentario->comentario); ?>
-                                    <br />
-                                    <br>
-                                    <hr />
-                                    <br>
-                                <?php
-                                }
+                                    <div class="form-group">
+                                        <label for="nombre" class="form-label">Nombre</label>
+                                        <input class="form-control" name="nombre" type="text" id="nombre" placeholder="Escribe tu nombre" required>
+                                    </div>
 
-                                ?>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="comentario" class="form-label">Comentario:</label>
+                                        <textarea class="textComentario" name="comentario" cols="30" rows="5" type="text" id="comentario" placeholder="Escribe tu comentario......"></textarea>
+                                    </div>
+                                    <br>
+                                    <input class="btnComentar" type="submit" value="Enviar Comentario">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <?php
 
-        </form>
+                                    $resultado = mysqli_query($conexion, "SELECT * FROM comentarios WHERE idEmpresa = '$nik'");
+
+                                    while ($comentario = mysqli_fetch_object($resultado)) {
+
+                                    ?>
+
+                                        <b><?php echo ($comentario->nombre);  ?></b>(<?php echo ($comentario->fecha); ?>) dijo:
+                                        <br />
+                                        <br>
+                                        <?php echo ($comentario->comentario); ?>
+                                        <br />
+                                        <br>
+                                        <hr />
+                                        <br>
+                                    <?php
+                                    }
+
+                                    ?>
+
+            </form>
 
         </div>
 
         </section>
         <div>
-        <!---------------------------------------------------------------->
+            <!---------------------------------------------------------------->
 
-        <?php
+            <?php
 
-        $sql2 = mysqli_query($conexion, "SELECT idSERVICIO, nombre_servicio,precio_servicio FROM servicio WHERE EMPRESA_idEmpresa='$nik'");
+            $sql2 = mysqli_query($conexion, "SELECT idSERVICIO, nombre_servicio,precio_servicio FROM servicio WHERE EMPRESA_idEmpresa='$nik'");
 
-        $sql3 = mysqli_query($conexion, "SELECT idHORAS, fecha, hora FROM horas WHERE EMPRESA_idEmpresa='$nik' AND disponible = 'si' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
+            $sql3 = mysqli_query($conexion, "SELECT idHORAS, fecha, hora FROM horas WHERE EMPRESA_idEmpresa='$nik' AND disponible = 'si' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
 
-        ?>
+            ?>
 
-        <div id="id02" class="modalAgendar">
-            <div class="title">Agendar</div>
-            <div class="content">
-                <form class="container-content animate" action="./Funciones/Agendar.php" method="post">
-                    <input type="hidden" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly>
+            <div id="id02" class="modalAgendar">
+                <div class="title">Agendar</div>
+                <div class="content">
+                    <form class="container-content animate" action="./Funciones/Agendar.php" method="post">
+                        <input type="hidden" name="idEmpresa" value="<?php echo $nik ?>" hidden readonly>
 
-                    <div class="user-details">
-                        <div class="input-box">
-                            <span class="details" for="nomCLIENTE">Nombres</span>
-                            <input type="text" placeholder="Ingrese su nombre" name="nomCLIENTE" required>
+                        <div class="user-details">
+                            <div class="input-box">
+                                <span class="details" for="nomCLIENTE">Nombres</span>
+                                <input type="text" placeholder="Ingrese su nombre" name="nomCLIENTE" required>
 
+                            </div>
+                            <div class="input-box">
+                                <span class="details" for="apellCLIENTE">Apellidos</span>
+                                <input type="text" placeholder="Ingrese su apellido" name="apellCLIENTE" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details" for="rutCLIENTE">Rut</span>
+                                <input type="text" placeholder="Ingrese su Rut" id="rutCLIENTE" name="rutCLIENTE" oninput="checkRut(this)" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details" for="dirCLIENTE">Direccion</span>
+                                <input type="text" placeholder="Ingrese su Direccion" name="dirCLIENTE" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details" for="numCLIENTE">Numero Celular</span>
+                                <input class="code" type="text" placeholder="+56" readonly>
+                                <input type="tel" class="tel" name="numCLIENTE" placeholder="12345678" maxlength="8" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details" for="emailCLIENTE">Correo electronico</span>
+                                <input type="email" name="emailCLIENTE" placeholder="correo@gmail.com" required>
+                            </div>
+                            <div class="select-box">
+                                <span class="details">servicio:</span>
+                                <select name="cbx_servicios" id="cbx_servicios">
+                                    <option value="0">seleccionar un servicio</option>
+                                    <?php while ($row = $sql2->fetch_assoc()) {
+                                    ?>
+                                        <option value="<?php echo $row['idSERVICIO']; ?>"><?php echo $row['nombre_servicio']; ?><?php echo ' - ' ?><?php echo '$' ?><?php echo $row['precio_servicio']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="select-box">
+                                <span class="details">Seleccion Hora:</span>
+                                <select name="cbx_horas" id="cbx_horas">
+                                    <option value="0">seleccionar Hora</option>
+                                    <?php while ($row = $sql3->fetch_assoc()) {
+                                    ?>
+                                        <option value="<?php echo $row['idHORAS']; ?>"><?php echo date("d-m-Y", strtotime($row['fecha'])); ?><?php echo ' - ' ?><?php echo date('H:s', strtotime($row['hora'])); ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
                         </div>
-                        <div class="input-box">
-                            <span class="details" for="apellCLIENTE">Apellidos</span>
-                            <input type="text" placeholder="Ingrese su apellido" name="apellCLIENTE" required>
+                        <div class="container2" style="background-color:#f1f1f1">
+                            <button type="submit" value="agendar" class="agendarbtn">Agendar</button>
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
                         </div>
-                        <div class="input-box">
-                            <span class="details" for="rutCLIENTE">Rut</span>
-                            <input type="text" placeholder="Ingrese su Rut" id="rutCLIENTE" name="rutCLIENTE" oninput="checkRut(this)" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details" for="dirCLIENTE">Direccion</span>
-                            <input type="text" placeholder="Ingrese su Direccion" name="dirCLIENTE" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details" for="numCLIENTE">Numero Celular</span>
-                            <input class="code" type="text" placeholder="+56" readonly>
-                            <input type="tel" class="tel" name="numCLIENTE" placeholder="12345678" maxlength="8" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details" for="emailCLIENTE">Correo electronico</span>
-                            <input type="email" name="emailCLIENTE" placeholder="correo@gmail.com" required>
-                        </div>
-                        <div class="select-box">
-                            <span class="details">servicio:</span>
-                            <select name="cbx_servicios" id="cbx_servicios">
-                                <option value="0">seleccionar un servicio</option>
-                                <?php while ($row = $sql2->fetch_assoc()) {
-                                ?>
-                                    <option value="<?php echo $row['idSERVICIO']; ?>"><?php echo $row['nombre_servicio']; ?><?php echo ' - ' ?><?php echo '$' ?><?php echo $row['precio_servicio']; ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div class="select-box">
-                            <span class="details">Seleccion Hora:</span>
-                            <select name="cbx_horas" id="cbx_horas">
-                                <option value="0">seleccionar Hora</option>
-                                <?php while ($row = $sql3->fetch_assoc()) {
-                                ?>
-                                    <option value="<?php echo $row['idHORAS']; ?>"><?php echo date("d-m-Y", strtotime($row['fecha'])); ?><?php echo ' - ' ?><?php echo date('H:s', strtotime($row['hora'])); ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="container2" style="background-color:#f1f1f1">
-                        <button type="submit" value="agendar" class="agendarbtn">Agendar</button>
-                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
 </body>
 
 <?php
@@ -283,7 +296,7 @@ while ($rowmap = @mysqli_fetch_assoc($resultmap)) {
         //puedes agregar todo el contenido que necesites
         var locations = [
             [
-                '<p class="strong"><?php echo $rowmap["nombre_empresa"]; ?></p>',
+                '<a href="https://www.google.com/maps/search/?api=1&query=<?php echo $rowlat["latitude"]; ?>,<?php echo $rowlat["longitude"]; ?>" target="_blank"><p><?php echo $rowmap["nombre_empresa"]; ?></p></a>',
                 <?php echo $rowmap["latitude"]; ?>, //lat
                 <?php echo $rowmap["longitude"]; ?>, //lon
                 icon_,

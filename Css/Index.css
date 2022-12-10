@@ -309,3 +309,7 @@ header.special .icon:before {
     margin-top: 50px;
   }
 }
+
+h1{
+  text-align: center;
+}

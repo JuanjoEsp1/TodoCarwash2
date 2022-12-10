@@ -2,12 +2,6 @@
 // Conexion Base de datos
 include("Funciones/db.php");
 
-//Contador de visitas
-$date = date("Y-m-d");
-$userIP = $_SERVER['REMOTE_ADDR'];
-$updateQuery = "UPDATE `visitas` SET `ip`='$userIP', `visitas`=`visitas` +1 ,`date` ='$date'";
-mysqli_query($conexion, $updateQuery);
-
 include("funciones.php")
 ?>
 <!DOCTYPE html>
@@ -59,33 +53,18 @@ include("funciones.php")
     </figure>
   </div>
 
-   <!-- Mapa -->
-   <div id="mapCanvas"></div>
-  
-  <!-- Sobre nosotros -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <!-- Sobre nosotros -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
     <h2 class="w3-wide">Sobre Nosotros</h2>
     <p class="w3-opacity"><i></i></p>
     <p class="w3-justify">TodoCarwash nació en el año 2021 medio de la pandemia, su principal objetivo es ofrecer una plataforma a todo pymes o Empresas de lavado de autos que necesitan publicar su servicio de agendamiento de horas.</p>
-
-
-    <div class="w3-row w3-padding-32">
-      <div class="w3-third">
-        <p>Guillermo</p>
-        <img src="/IMG/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-      </div>
-      <div class="w3-third">
-        <p>Given</p>
-        <img src="/IMG/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-      </div>
-      <div class="w3-third">
-        <p>Juan</p>
-        <img src="/IMG/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
-      </div>
-    </div>
-
-
   </div>
+
+   <!-- Mapa -->
+   <h1 class="w3-wide">Centros de lavados</h1>
+   <div id="mapCanvas"></div>
+  
+
 
   <section class="wrapper style1 container special">
     <div class="row">
@@ -178,7 +157,7 @@ include("funciones.php")
                     while ($row = $result2->fetch_assoc()) { ?>
 
                         ['<div class="info_content">' +
-                            '<a href="../DetalleEmpresa.php?nik=<?php echo $row['idEmpresa']; ?>"> <h3><?php echo $row['nombre_empresa']; ?></h3> </a>'+
+                            '<a href="../DetalleEmpresa2.php?nik=<?php echo $row['idEmpresa']; ?>"> <h3><?php echo $row['nombre_empresa']; ?></h3> </a>'+
                             '<p><?php echo $row['direccion']; ?></p>' + '</div>'
                         ],
                 <?php }
