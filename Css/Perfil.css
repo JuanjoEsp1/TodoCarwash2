@@ -160,3 +160,11 @@ a:hover {
 .btnpago:hover {
   background: linear-gradient(-135deg, #0082e6, #1d2a5a);
 }
+
+.fas{
+  font-size: 25px;
+  color: black;
+}
+.calificaciones{
+  font-size: 20px;
+}

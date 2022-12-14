@@ -55,9 +55,8 @@ include("funciones.php")
 
     <!-- Sobre nosotros -->
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">Sobre Nosotros</h2>
-    <p class="w3-opacity"><i></i></p>
-    <p class="w3-justify">TodoCarwash nació en el año 2021 medio de la pandemia, su principal objetivo es ofrecer una plataforma a todo pymes o Empresas de lavado de autos que necesitan publicar su servicio de agendamiento de horas.</p>
+    <p class="textbienvenida">Bienvenidos a TodoCarwash, el sitio web ideal para encontrar tu centro de lavado automotriz más cercano! 
+¿Eres empresa? Estás en el lugar indicado, donde podrás publicitar tu empresa, con un mes GRATIS!</p>
   </div>
 
    <!-- Mapa -->

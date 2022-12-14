@@ -21,7 +21,7 @@ $resultado = $conexion->query($sql);
 $row = $resultado->fetch_assoc();
 
 $idEmpresa = $row['idEmpresa'];
-$fecha2=date("Y-m-d");
+$fecha2 = date("Y-m-d");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -40,7 +40,7 @@ $fecha2=date("Y-m-d");
 </head>
 
 <body>
-	<!-- barra de navegacion perfil -->
+    <!-- barra de navegacion perfil -->
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
@@ -59,41 +59,43 @@ $fecha2=date("Y-m-d");
         </ul>
     </nav>
     <?php
-//Consulta para obtener la fecha de las horas agendadas
+    //Consulta para obtener la fecha de las horas agendadas
     $sql2 = mysqli_query($conexion, "SELECT DISTINCT fecha FROM horas
     INNER JOIN agendamiento ON agendamiento.HORAS_idHORAS = horas.idHORAS
     WHERE agendamiento.EMPRESA_idEmpresa = '$idEmpresa' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha");
 
-    $fecha1 = mysqli_query($conexion,"SELECT fecha FROM empresa WHERE idEmpresa = '$idEmpresa'");
+    $fecha1 = mysqli_query($conexion, "SELECT fecha FROM empresa WHERE idEmpresa = '$idEmpresa'");
     $resfecha = $fecha1->fetch_assoc();
-    $sumfecha = date('Y-m-d',strtotime($resfecha['fecha']."+ 7 days"));
+    $sumfecha = date('Y-m-d', strtotime($resfecha['fecha'] . "+ 7 days"));
 
-    if($sumfecha <= $fecha2){
+    if ($sumfecha <= $fecha2) {
         echo "<div class='alert alert-success'>Pagar suscripcion</div>";
     }
     ?>
-    <!--<h1><?php //echo $resfecha['fecha'];?></h1>
-    <h1><?php //echo $sumfecha;?></h1> -->
+    <!--<h1><?php //echo $resfecha['fecha'];
+            ?></h1>
+    <h1><?php //echo $sumfecha;
+        ?></h1> -->
 
     <?php
-                if ($_GET['success']) {
-                    if ($_GET['success'] == 'registrado') {
-                ?>
-                        <small class="alert alert-success">Registrado correctamente!</small>
-                        <hr>
-                    <?php
-                    }
-                }
-                if (isset($_GET['error'])) {
+    if ($_GET['success']) {
+        if ($_GET['success'] == 'registrado') {
+    ?>
+            <small class="alert alert-success">Registrado correctamente!</small>
+            <hr>
+        <?php
+        }
+    }
+    if (isset($_GET['error'])) {
 
-                    if ($_GET['error'] == 'error') {
-                    ?>
-                        <small class="alert alert-danger">Servicios no ingresados!</small>
-                        <hr>
-                    <?php
-                    }
-                }
-                ?>
+        if ($_GET['error'] == 'error') {
+        ?>
+            <small class="alert alert-danger">Servicios no ingresados!</small>
+            <hr>
+    <?php
+        }
+    }
+    ?>
 
 
 
@@ -101,10 +103,25 @@ $fecha2=date("Y-m-d");
         <button type="button" class="btnpago" onclick="location.href='https://www.flow.cl/btn.php?token=i90ype2'">Suscripcion</button>
     </div>
     <div class="container">
-        
+        <?php
+        $visitas = mysqli_query($conexion, "SELECT SUM(visitas) as sumaVisitas FROM visitas WHERE idEmpresa = '$idEmpresa'");
+        $rowvisitas = mysqli_fetch_assoc($visitas);
 
-        <h1>Bienvenido: <?php echo utf8_encode($row['nombre_empresa']); ?></h1>
+        $valoracion = mysqli_query($conexion, "SELECT ROUND(AVG(valoracion),1) as promedio FROM valoracion WHERE idEmpresa = '$idEmpresa'");
+        $rowvalo = mysqli_fetch_assoc($valoracion);
 
+        $valoracionCount = mysqli_query($conexion, "SELECT COUNT(valoracion) as cantidad FROM valoracion WHERE idEmpresa = '$idEmpresa'");
+        $rowCount = mysqli_fetch_assoc($valoracionCount);
+        ?>
+
+        <h1>Bienvenido: <a href="DetalleEmpresa2.php?nik=<?php echo $idEmpresa ?>" target="_blank"><?php echo utf8_encode($row['nombre_empresa']); ?></a></h1>
+        <i class="fas fa-eye"><?php echo ' ' ?><?php echo $rowvisitas["sumaVisitas"]; ?></i>
+        <p></p>
+        <div class="calificaciones">
+        <p>Calificacion General</p>
+        <p><?php echo $rowvalo["promedio"] ?> / 5</p>
+        <p><?php echo $rowCount["cantidad"] ?> Calificaciones </p>
+        </div>
         <hr>
         <h1>Horas Agendadas</h1>
         <hr>
@@ -122,7 +139,7 @@ $fecha2=date("Y-m-d");
                 <input type=submit value="Reset" class="btn btn-warning" name="btnReset">
             </form>
             <br>
-		<!-- tabla donde se muestran los datos de las horas agendadas -->
+            <!-- tabla donde se muestran los datos de las horas agendadas -->
             <table class="table table-striped table-hover" aria-describedby="Agenda">
                 <tr>
                     <th>ID</th>
@@ -135,14 +152,14 @@ $fecha2=date("Y-m-d");
                     <th>Accion</th>
                 </tr>
                 <?php
-		// Consulta para obtener los datos de las horas agendadas
+                // Consulta para obtener los datos de las horas agendadas
                 $sql = mysqli_query($conexion, "SELECT * FROM agendamiento 
                 INNER JOIN horas ON agendamiento.HORAS_idHORAS = horas.idHORAS 
                 INNER JOIN servicio ON agendamiento.SERVICIO_idSERVICIO = servicio.idSERVICIO 
                 WHERE agendamiento.EMPRESA_idEmpresa = '$idEmpresa' AND fecha > (Now() - INTERVAL 1 DAY) ORDER BY fecha, hora");
 
                 if (isset($_POST['buscar'])) {
-		    // Consulta para buscar por fecha
+                    // Consulta para buscar por fecha
                     $buscarFecha = strval($_POST['search']);
                     $sql = mysqli_query($conexion, "SELECT * FROM agendamiento
                     RIGHT JOIN horas ON agendamiento.HORAS_idHORAS = horas.idHORAS 
@@ -152,7 +169,7 @@ $fecha2=date("Y-m-d");
                 if (mysqli_num_rows($sql) == 0) {
                     echo '<tr><td colspan="8">No hay datos.</td></tr>';
                 } else {
-		    // Recorrido para mostrar los datos
+                    // Recorrido para mostrar los datos
                     while ($row = mysqli_fetch_assoc($sql)) {
                         echo '
 						<tr>
