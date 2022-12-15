@@ -25,7 +25,9 @@
 
     echo "su hora fue agendada exitosamente";
 
-    header("Location:../Index.php?success=agendado");
+    header("Location:../DetalleEmpresa2.php?nik='$_REQUEST[idEmpresa]'?success=agendado");
+    
+    
     ?>
     
 
