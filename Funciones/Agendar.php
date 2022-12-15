@@ -23,9 +23,11 @@
 
     mysqli_close($conexion);
 
-    echo "su hora fue agendada exitosamente";
-
-    header("Location:../DetalleEmpresa2.php?nik='$_REQUEST[idEmpresa]'?success=agendado");
+    echo "";
+    echo "<script>
+    alert('su hora fue agendada exitosamente');
+    window.location.href='../DetalleEmpresa2.php?nik=$_REQUEST[idEmpresa]';
+    </script>";
     
     
     ?>
