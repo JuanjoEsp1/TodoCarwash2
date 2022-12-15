@@ -24,6 +24,16 @@ include("Funciones/db.php");
     ?>
     <div>
         <?php
+  if ($_GET['success']) {
+    if ($_GET['success'] == 'agendado') {
+  ?>
+      <small class="alert alert-success">Agendado correctamente!</small>
+      <hr>
+  <?php
+    }
+  }
+  ?>
+        <?php
         // Consulta para obtener el id de la empresa
         $nik = mysqli_real_escape_string($conexion, (strip_tags($_GET["nik"], ENT_QUOTES)));
 
